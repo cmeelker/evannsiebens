@@ -1,39 +1,41 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
+
+export const dynamic = "force-dynamic";
 
 interface PortfolioItem {
+  id: number;
   title: string;
   description: string;
 }
 
 const Home = async () => {
-  const res = await axios.get("http://127.0.0.1:1337/api/portfolio-items");
-  console.log(res.data.data);
-  // if (error) {
-  //   return <div>An error occured: {error.message}</div>;
-  // }
+  const portfolioItems = await getPortFolioItems();
+
   return (
-    <ul>
-      {res.data.data.map((item: any) => (
-        <li key={item.id}>
-          <div>{item.attributes.Title}</div>
-          <div>{item.attributes.Description}</div>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h1>Items:</h1>
+      <ul>
+        {portfolioItems.map((item: PortfolioItem) => (
+          <li key={item.id}>
+            <div>{item.title}</div>
+            <div>{item.description}</div>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 
-Home.getInitialProps = async (ctx: any) => {
-  console.log();
-  try {
-    const res = await axios.get("http://localhost:1337/api/portfolio-items");
-    console.log(res);
-    const items = res.data as PortfolioItem[];
-    console.log("🍕", items);
-    return { items };
-  } catch (error) {
-    return { error };
-  }
-};
-
 export default Home;
+
+async function getPortFolioItems() {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/portfolio-items`
+  );
+  const portfolioItems: PortfolioItem[] = res.data.data.map((item: any) => ({
+    id: item.id,
+    title: item.attributes.Title,
+    description: item.attributes.Description,
+  }));
+  return portfolioItems;
+}
