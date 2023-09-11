@@ -13,6 +13,7 @@
   "dependencies": {
     "@strapi/plugin-i18n": "4.13.3",
     "@strapi/plugin-users-permissions": "4.13.3",
+    "@strapi/provider-upload-local": "^4.13.4",
     "@strapi/strapi": "4.13.3",
     "better-sqlite3": "8.5.0",
     "pg": "^8.11.3",
