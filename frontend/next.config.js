@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/admin",
+        destination: `https://evannsiebens-strapi-xtkdr.ondigitalocean.app/admin`,
+        permanent: true,
+        basePath: false,
+      },
+    ];
+  },
+};
