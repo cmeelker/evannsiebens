@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "portfolio_items",
+  "collectionName": "projects",
   "info": {
-    "singularName": "portfolio-item",
-    "pluralName": "portfolio-items",
-    "displayName": "Portfolio item",
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
     "description": ""
   },
   "options": {
@@ -15,16 +15,17 @@
     "Title": {
       "type": "string"
     },
+    "Year": {
+      "type": "string"
+    },
     "Description": {
-      "type": "text"
+      "type": "richtext"
     },
     "Image": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     }
   }
 }

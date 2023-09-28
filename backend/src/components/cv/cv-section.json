@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cv_cv_sections",
+  "info": {
+    "displayName": "CV Section",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.cv-item"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}
