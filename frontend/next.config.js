@@ -21,8 +21,8 @@ module.exports = {
       },
       {
         protocol: "https",
-        hostname: "evannsiebens-strapi-xtkdr.ondigitalocean.app",
-        pathname: "/uploads/**",
+        hostname: "evannsiebens-strapi.ams3.digitaloceanspaces.com",
+        pathname: "/**",
       },
     ],
   },
