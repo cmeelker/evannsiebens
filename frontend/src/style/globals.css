@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-bold text-mirage tracking-[-0.06rem] leading-[3.125rem];
+  @apply font-bold text-mirage tracking-[-0.06rem] leading-[3.125rem] text-h1;
   font-family: "Arial Grotesk";
 }
 
@@ -26,4 +26,8 @@ body {
   font-weight: 700;
   font-style: bold;
   font-display: swap;
+}
+
+.content {
+  min-height: calc(100vh - 16.5rem);
 }
