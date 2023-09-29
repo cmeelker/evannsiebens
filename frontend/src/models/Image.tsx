@@ -5,9 +5,14 @@ export interface StrapiImage {
 }
 
 export function mapImage(image: any): StrapiImage {
+  const urlPrefix =
+    process.env.NODE_ENV === "development"
+      ? process.env.NEXT_PUBLIC_API_URL
+      : "";
+
   return {
     id: image.id,
-    url: `${process.env.NEXT_PUBLIC_API_URL}${image.attributes.url}`,
+    url: `${urlPrefix}${image.attributes.url}`,
     alt: image.attributes.alternativeText,
   };
 }

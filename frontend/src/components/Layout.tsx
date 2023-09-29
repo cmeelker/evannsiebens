@@ -2,7 +2,7 @@ import Footer from "./Footer";
 
 export default function Layout({
   children,
-  className,
+  className = "bg-bright-gray",
   footerClassName,
 }: {
   children: React.ReactNode;
