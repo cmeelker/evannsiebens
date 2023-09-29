@@ -7,7 +7,8 @@ const config: Config = {
       colors: {
         "bright-gray": "#ECECEC",
         "dark-gray": "#7e8286",
-        black: "#101820",
+        black: "#000000",
+        mirage: "#101820",
       },
     },
   },

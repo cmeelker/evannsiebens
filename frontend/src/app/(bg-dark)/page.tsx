@@ -11,7 +11,6 @@ const Home = async () => {
       <ul>
         {portfolioItems.map((project: Project) => (
           <li key={project.id}>
-            <div>{project.title}</div>
             <div className="w-[400px] h-[400px] relative">
               <Image
                 className="object-cover"

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-bold text-black tracking-[-0.06rem] leading-[3.125rem];
+  @apply font-bold text-mirage tracking-[-0.06rem] leading-[3.125rem];
   font-family: "Arial Grotesk";
 }
 
