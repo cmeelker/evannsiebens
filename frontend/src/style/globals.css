@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-bold text-black tracking-[-0.06rem] leading-[3.125rem];
+  font-family: "Arial Grotesk";
+}
+
+.text-h1 {
+  @apply text-[3.125rem];
+}
+
+.text-h2 {
+  @apply text-[1.875rem];
+}
+
+@font-face {
+  font-family: "Arial Grotesk";
+  src: url("/fonts/arial-grotesk-bold.woff2") format("woff2"),
+    url("/fonts/arial-grotesk-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
