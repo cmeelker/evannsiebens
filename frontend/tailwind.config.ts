@@ -5,8 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brightGray: "#ECECEC",
-        darkGray: "#7e8286",
+        "bright-gray": "#ECECEC",
+        "dark-gray": "#7e8286",
         black: "#101820",
       },
     },
