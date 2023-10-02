@@ -1,17 +1,24 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Dispatch, SetStateAction, useState } from "react";
 
 // TO DO: In CMS ?
 
-const menuItems = [
-  <MenuItem href="/bio" label="Bio" key="0" />,
-  <MenuItem href="/cv" label="CV" key="1" />,
-  <MenuItem href="/contact" label="Contact" key="2" />,
-];
-const menuList = menuItems.map((item) => <li key={item.key}>{item}</li>);
-
 export default function NavBar() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const menuItems = [
+    <MenuItem href="/bio" label="Bio" key="0" />,
+    <MenuItem href="/cv" label="CV" key="1" />,
+    <MenuItem href="/contact" label="Contact" key="2" />,
+  ];
+  const menuListItems = menuItems.map((item) => (
+    <li key={item.key} onClick={() => setShowMenu(false)}>
+      {item}
+    </li>
+  ));
+
   return (
     <div className="flex m-auto justify-center">
       <div className="max-w-[88rem] flex justify-between absolute w-full z-50">
@@ -21,11 +28,23 @@ export default function NavBar() {
           </div>
         </ProjectPageOnly>
         <nav className="flex flex-col w-fit m-auto sm:items-center items-left">
-          <Link href="/" className="w-fit text-nav">
+          <Link
+            href="/"
+            className="w-fit text-nav"
+            onClick={() => setShowMenu(false)}
+          >
             Evann Siebens
           </Link>
-          <DesktopMenu className="sm:flex hidden" />
-          <MobileMenu className="flex sm:hidden w-fit" />
+          <DesktopMenu
+            className="sm:flex hidden"
+            menuListItems={menuListItems}
+          />
+          <MobileMenu
+            className="flex sm:hidden w-fit"
+            menuListItems={menuListItems}
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+          />
         </nav>
         <ProjectPageOnly>
           <div className="hidden sm:flex h-fit">
@@ -40,20 +59,51 @@ export default function NavBar() {
   );
 }
 
-function DesktopMenu({ className }: { className: string }) {
+function DesktopMenu({
+  className,
+  menuListItems,
+}: {
+  className: string;
+  menuListItems: JSX.Element[];
+}) {
   return (
     <ul className={`bg-bright-gray ${className}`}>
-      {menuItems[0]}
+      {menuListItems[0]}
       <div className="text-nav">⇉</div>
-      {menuItems[1]}
+      {menuListItems[1]}
       <div className="text-nav">⇉</div>
-      {menuItems[2]}
+      {menuListItems[2]}
     </ul>
   );
 }
 
-function MobileMenu({ className }: { className: string }) {
-  return <ul className={`flex flex-col ${className}`}>{menuList}</ul>;
+function MobileMenu({
+  className,
+  menuListItems,
+  showMenu,
+  setShowMenu,
+}: {
+  className: string;
+  menuListItems: JSX.Element[];
+  showMenu: boolean;
+  setShowMenu: Dispatch<SetStateAction<boolean>>;
+}) {
+  return (
+    <div className={`flex justify-between w-full ${className}`}>
+      <div>
+        <ul className={`flex flex-col ${showMenu ? "" : "hidden"}`}>
+          {menuListItems}
+        </ul>
+      </div>
+      <div
+        className="text-nav h-fit hover:cursor-pointer w-16 text-center"
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        {/* TO DO: ICONS */}
+        {showMenu ? <div>/-</div> : <div>=</div>}
+      </div>
+    </div>
+  );
 }
 
 function MenuItem({ href, label }: { href: string; label: string }) {
