@@ -12,7 +12,7 @@ export default function Layout({
   return (
     <div className={`min-h-screen flex flex-col ${className}`}>
       <div className="mt-[11rem] flex-grow">
-        <div className="max-w-[88rem] m-auto px-5">{children}</div>
+        <div className="max-w-[88rem] m-auto px-3">{children}</div>
       </div>
       <div>
         <Footer className={`max-w-[88rem] m-auto px-5 ${footerClassName}`} />

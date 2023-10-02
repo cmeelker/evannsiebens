@@ -3,6 +3,29 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    fontSize: {
+      base: [
+        "1.875rem",
+        {
+          lineHeight: "1.875rem",
+          letterSpacing: "[-0.06rem]",
+        },
+      ],
+      lg: [
+        "3.125rem",
+        {
+          lineHeight: "3.125rem",
+          letterSpacing: "[-0.06rem]",
+        },
+      ],
+      sm: [
+        "1.5rem",
+        {
+          lineHeight: "1.5rem",
+          letterSpacing: "[-0.06rem]",
+        },
+      ],
+    },
     extend: {
       colors: {
         "bright-gray": "#ECECEC",

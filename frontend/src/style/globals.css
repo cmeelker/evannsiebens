@@ -3,20 +3,12 @@
 @tailwind utilities;
 
 body {
-  @apply font-bold text-mirage tracking-[-0.06rem] leading-[3.125rem] text-h1;
+  @apply font-bold text-mirage text-lg;
   font-family: "Arial Grotesk";
 }
 
-.text-h1 {
-  @apply text-[3.125rem];
-}
-
-.text-h2 {
-  @apply text-[1.875rem];
-}
-
 .text-nav {
-  @apply bg-bright-gray pt-3 text-h1 pr-1;
+  @apply bg-bright-gray pt-3 pr-1;
 }
 
 @font-face {
@@ -27,7 +19,3 @@ body {
   font-style: bold;
   font-display: swap;
 }
-
-/* .content {
-  min-height: calc(100vh - 16.5rem);
-} */

@@ -6,7 +6,7 @@ export default function Footer({
   className?: string;
 }) {
   return (
-    <footer className={`text-regular text-2xl mt-10 pb-3 ${className}`}>
+    <footer className={`text-regular text-sm mt-10 pb-3 ${className}`}>
       Footer
     </footer>
   );

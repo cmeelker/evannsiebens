@@ -27,7 +27,7 @@ export default function NavBar() {
             <MenuItem href="/projects" label="List" />
           </div>
         </ProjectPageOnly>
-        <nav className="flex flex-col w-fit m-auto sm:items-center items-left">
+        <nav className="flex flex-col w-fit m-auto sm:items-center items-left px-3">
           <Link
             href="/"
             className="w-fit text-nav"
@@ -131,7 +131,7 @@ function ListOrGridLink() {
   const label = onGridView ? "List" : "Grid";
 
   return (
-    <div className="fixed bottom-0 left-0 sm:hidden z-50">
+    <div className="fixed bottom-0 left-0 sm:hidden z-50 px-3">
       <MenuItem href={href} label={label} />
     </div>
   );
