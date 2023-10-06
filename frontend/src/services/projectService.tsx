@@ -12,6 +12,10 @@ export async function getProjects() {
   return projects;
 }
 
-export async function getProject() {
-  // to do
+export async function getProject(slug: string) {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/projects/${slug}?populate=*`
+  );
+
+  return mapProject(res.data.data);
 }

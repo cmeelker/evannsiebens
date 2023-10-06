@@ -29,7 +29,7 @@
         "images"
       ]
     },
-    "slug": {
+    "Slug": {
       "type": "string",
       "required": true,
       "unique": true,
