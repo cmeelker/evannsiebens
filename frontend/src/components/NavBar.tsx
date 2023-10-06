@@ -23,7 +23,7 @@ export default function NavBar() {
     <div className="flex m-auto justify-center">
       <div className="max-w-[88rem] flex justify-between absolute w-full z-50">
         <ProjectPageOnly>
-          <div className="hidden sm:flex h-fit">
+          <div className="hidden md:flex h-fit">
             <MenuItem href="/projects" label="List" />
           </div>
         </ProjectPageOnly>
@@ -36,18 +36,18 @@ export default function NavBar() {
             Evann Siebens
           </Link>
           <DesktopMenu
-            className="sm:flex hidden"
+            className="md:flex hidden"
             menuListItems={menuListItems}
           />
           <MobileMenu
-            className="flex sm:hidden w-fit"
+            className="flex md:hidden w-fit"
             menuListItems={menuListItems}
             showMenu={showMenu}
             setShowMenu={setShowMenu}
           />
         </nav>
         <ProjectPageOnly>
-          <div className="hidden sm:flex h-fit">
+          <div className="hidden md:flex h-fit">
             <MenuItem href="/" label="Grid" />
           </div>
         </ProjectPageOnly>
@@ -131,7 +131,7 @@ function ListOrGridLink() {
   const label = onGridView ? "List" : "Grid";
 
   return (
-    <div className="fixed bottom-0 left-0 sm:hidden z-50 px-3">
+    <div className="fixed bottom-0 left-0 md:hidden z-50 px-3">
       <MenuItem href={href} label={label} />
     </div>
   );

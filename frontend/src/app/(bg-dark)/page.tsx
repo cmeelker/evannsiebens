@@ -33,7 +33,7 @@ const Home = async () => {
 
   return (
     <>
-      <ul className="flex flex-col gap-5 md:gap-0 items-stretch">
+      <ul className="flex flex-col gap-10 md:gap-0 items-stretch">
         {portfolioItems.map((project: Project, index) => {
           const image = (
             <Link href={`/projects/${project.slug}`}>

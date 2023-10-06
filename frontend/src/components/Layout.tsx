@@ -11,7 +11,7 @@ export default function Layout({
 }) {
   return (
     <div className={`min-h-screen flex flex-col ${className}`}>
-      <div className="mt-[11rem] flex-grow">
+      <div className="mt-[10rem] md:mt-[11rem] flex-grow">
         <div className="max-w-[88rem] m-auto px-3">{children}</div>
       </div>
       <div>

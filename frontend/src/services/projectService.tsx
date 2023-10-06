@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function getProjects() {
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/projects?populate=*`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/projects?sort=Year:DESC&populate=*`
   );
 
   const projects: Project[] = res.data.data.map((project: any) =>
