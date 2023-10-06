@@ -21,16 +21,6 @@ const rowStyles = [
 const Home = async () => {
   let portfolioItems = await getProjects();
 
-  ///////////// TEMP /////////////
-  portfolioItems = portfolioItems
-    .concat(portfolioItems)
-    .concat(portfolioItems)
-    .concat(portfolioItems)
-    .concat(portfolioItems)
-    .concat(portfolioItems)
-    .concat(portfolioItems);
-  ////////////////////////////////
-
   return (
     <>
       <ul className="flex flex-col gap-10 md:gap-0 items-stretch">
