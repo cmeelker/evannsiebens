@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Evann Siebens / Bio",
+};
+
 export default function BioPage() {
   return (
     <h1>
