@@ -16,11 +16,14 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <div className="flex justify-between">
+    <div className="relative">
       <ul>
         {projects.map((project: Project) => {
           return (
-            <li key={project.id} className="text-base sm:text-lg">
+            <li
+              key={project.id}
+              className="text-base md:text-lg hover:opacity-70"
+            >
               <Link
                 href={`/projects/${project.slug}`}
                 onMouseEnter={() => onMouseEnter(project.media[0])}
@@ -44,15 +47,17 @@ function HoverImage({
   showImage: boolean;
   image: StrapiImage;
 }) {
-  if (true) {
+  if (showImage) {
     return (
-      <div className="hidden md:block w-[56%] md:h-[24rem] xl:h-[31rem] sticky top-0">
-        <Image
-          className="object-cover"
-          src={image.url}
-          alt={image.alt || ""}
-          fill={true}
-        />
+      <div className="w-[55%] absolute top-0 right-0 h-full">
+        <div className="sticky top-0 w-full h-[30rem] lg:block hidden">
+          <Image
+            className="object-cover"
+            src={image.url}
+            alt={image.alt || ""}
+            fill={true}
+          />
+        </div>
       </div>
     );
   } else {
