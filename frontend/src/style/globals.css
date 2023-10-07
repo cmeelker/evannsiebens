@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Arial Grotesk";
+  src: url("/fonts/arial-grotesk-bold.woff2") format("woff2"),
+    url("/fonts/arial-grotesk-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
 body {
   @apply font-bold text-mirage text-lg;
   font-family: "Arial Grotesk";
@@ -15,11 +24,12 @@ body {
   @apply text-base lg:text-lg;
 }
 
-@font-face {
-  font-family: "Arial Grotesk";
-  src: url("/fonts/arial-grotesk-bold.woff2") format("woff2"),
-    url("/fonts/arial-grotesk-bold.woff") format("woff");
-  font-weight: 700;
-  font-style: bold;
-  font-display: swap;
+.fade-in {
+  @apply opacity-100 transition-all duration-[1500ms];
+  filter: blur(0);
+}
+
+.fade-out {
+  @apply opacity-0 transition-all duration-500;
+  filter: blur(0.5px);
 }
