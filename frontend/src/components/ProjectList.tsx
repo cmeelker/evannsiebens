@@ -16,7 +16,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <div className="relative">
+    <div className="flex justify-between">
       <ul>
         {projects.map((project: Project) => {
           return (
@@ -44,9 +44,9 @@ function HoverImage({
   showImage: boolean;
   image: StrapiImage;
 }) {
-  if (showImage) {
+  if (true) {
     return (
-      <div className="hidden md:block w-[56%] md:h-[24rem] xl:h-[31rem] absolute right-0 top-0">
+      <div className="hidden md:block w-[56%] md:h-[24rem] xl:h-[31rem] sticky top-0">
         <Image
           className="object-cover"
           src={image.url}

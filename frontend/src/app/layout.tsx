@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NavBar />
-        <div className="overflow-y-hidden overflow-x-hidden">{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );
