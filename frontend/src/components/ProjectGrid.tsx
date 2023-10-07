@@ -35,25 +35,22 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
         );
 
         return (
-          <>
-            <AppearInView className="items-stretch flex flex-col">
-              <li
-                className={`hidden md:block ${
-                  rowStyles[getLastDigit(index)]
-                } relative`}
-                key={project.id}
-              >
-                {image}
-              </li>
+          <AppearInView
+            className="items-stretch flex flex-col"
+            key={project.id}
+          >
+            <li
+              className={`hidden md:block ${
+                rowStyles[getLastDigit(index)]
+              } relative`}
+            >
+              {image}
+            </li>
 
-              <li
-                className="md:hidden flex w-full h-[30vh] sm:h-[45vh] relative"
-                key={project.id}
-              >
-                {image}
-              </li>
-            </AppearInView>
-          </>
+            <li className="md:hidden flex w-full h-[30vh] sm:h-[45vh] relative">
+              {image}
+            </li>
+          </AppearInView>
         );
       })}
     </ul>
