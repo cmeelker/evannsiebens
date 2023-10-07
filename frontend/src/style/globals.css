@@ -12,7 +12,7 @@ body {
 }
 
 .text-body {
-  @apply text-base md:text-lg;
+  @apply text-base lg:text-lg;
 }
 
 @font-face {
