@@ -11,6 +11,10 @@ body {
   @apply bg-bright-gray pt-3 pr-1;
 }
 
+.text-body {
+  @apply text-base md:text-lg;
+}
+
 @font-face {
   font-family: "Arial Grotesk";
   src: url("/fonts/arial-grotesk-bold.woff2") format("woff2"),

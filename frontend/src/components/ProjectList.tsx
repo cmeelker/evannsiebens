@@ -20,10 +20,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
       <ul>
         {projects.map((project: Project) => {
           return (
-            <li
-              key={project.id}
-              className="text-base md:text-lg hover:opacity-70"
-            >
+            <li key={project.id} className="hover:opacity-70">
               <Link
                 href={`/projects/${project.slug}`}
                 onMouseEnter={() => onMouseEnter(project.media[0])}
@@ -49,8 +46,8 @@ function HoverImage({
 }) {
   if (showImage) {
     return (
-      <div className="w-[55%] absolute top-0 right-0 h-full">
-        <div className="sticky top-0 w-full h-[30rem] lg:block hidden">
+      <div className="w-[45%] xl:w-[55%] absolute top-0 right-0 h-full">
+        <div className="sticky top-0 w-full h-[25rem] xl:h-[30rem] lg:block hidden">
           <Image
             className="object-cover"
             src={image.url}
