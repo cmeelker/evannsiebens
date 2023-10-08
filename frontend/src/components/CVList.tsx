@@ -22,6 +22,7 @@ export default function CVList({ sections }: { sections: CVSection[] }) {
           key={section.id}
           onMouseEnter={() => sethoveredSection(section.id)}
           onMouseLeave={() => sethoveredSection(null)}
+          className="w-fit"
         >
           <CVSection
             key={section.id}
