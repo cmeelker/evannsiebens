@@ -10,7 +10,7 @@ export default async function ContactPage() {
   const contactPage = await getContactPage();
 
   return (
-    <div className="w-[86%]">
+    <div className="md:w-[86%]">
       <Richtext text={contactPage.description} />
     </div>
   );

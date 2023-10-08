@@ -10,7 +10,7 @@ export default async function BioPage() {
   const contactPage = await getBioPage();
 
   return (
-    <div className="w-[86%]">
+    <div className="md:w-[86%]">
       <Richtext text={contactPage.description} />
     </div>
   );
