@@ -15,7 +15,9 @@ export default function Layout({
         <div className="max-w-[88rem] m-auto px-3 text-body">{children}</div>
       </div>
       <div>
-        <Footer className={`max-w-[88rem] m-auto px-5 ${footerClassName}`} />
+        <Footer
+          className={`max-w-[88rem] m-auto px-3 lg:px-5 ${footerClassName}`}
+        />
       </div>
     </div>
   );
