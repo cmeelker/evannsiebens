@@ -88,12 +88,15 @@ export default function DesktopCarousel({
                 </div>
               )}
             </div>
-
-            <CarouselNavigation
-              currentSlide={currentSlide}
-              nextSlide={nextSlide}
-              total={images.length}
-            />
+            <div>
+              {images.length > 1 && (
+                <CarouselNavigation
+                  currentSlide={currentSlide}
+                  nextSlide={nextSlide}
+                  total={images.length}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
