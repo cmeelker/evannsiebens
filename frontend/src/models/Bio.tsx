@@ -2,8 +2,8 @@ export interface Bio {
   description: string;
 }
 
-export function mapBio(contact: any): Bio {
+export function mapBio(bio: any): Bio {
   return {
-    description: contact.attributes.Description,
+    description: bio.attributes.Description,
   };
 }
