@@ -8731,6 +8731,13 @@ rc@1.2.8, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-collapsed@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-collapsed/-/react-collapsed-4.0.4.tgz#4c6bce3a15286d43e95b6730ad70ec387a54caa9"
+  integrity sha512-8avvmnQxDYTgGZYVP9+3Z7doomxVEBoCkukpTmUHEIrAYvELZ5jNNfYCt/hCpHB6GmQbzZoDmnDupjsnQVgcCQ==
+  dependencies:
+    tiny-warning "^1.0.3"
+
 react-dnd-html5-backend@15.1.3:
   version "15.1.3"
   resolved "https://registry.yarnpkg.com/react-dnd-html5-backend/-/react-dnd-html5-backend-15.1.3.tgz#57b4f47e0f23923e7c243d2d0eefe490069115a9"
@@ -9860,6 +9867,11 @@ std-env@^3.0.1:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.4.3.tgz#326f11db518db751c83fd58574f449b7c3060910"
   integrity sha512-f9aPhy8fYBuMN+sNfakZV18U39PbalgjXG3lLB9WkaYTxijru61wb57V9wxxNthXM5Sd88ETBWi29qLAsHO52Q==
 
+strapi-plugin-populate-deep@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-3.0.0.tgz#bd2b7145c4d1d79381698be7995d4dc454416ffd"
+  integrity sha512-4xpg0JxdaIIeO3wQLIO6Lh5ppbN8kXVl9uopQbs2AhwEf1KwLMSSZjaNoN7shCrxt1cET/u2GTDKG+Nlq54ZKg==
+
 strapi-provider-upload-do@^3.6.9:
   version "3.6.9"
   resolved "https://registry.yarnpkg.com/strapi-provider-upload-do/-/strapi-provider-upload-do-3.6.9.tgz#001867b70108ac04c7cc84206e20ba5f78ab6513"
@@ -10270,7 +10282,7 @@ tiny-invariant@^1.0.2:
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.1.tgz#8560808c916ef02ecfd55e66090df23a4b7aa642"
   integrity sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==
 
-tiny-warning@^1.0.0, tiny-warning@^1.0.2:
+tiny-warning@^1.0.0, tiny-warning@^1.0.2, tiny-warning@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
