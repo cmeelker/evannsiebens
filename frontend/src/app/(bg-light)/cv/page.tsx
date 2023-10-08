@@ -1,5 +1,4 @@
 import CVList from "@/components/CVList";
-import { CVItem } from "@/models/CV";
 import { getCVSections } from "@/services/cvService";
 import type { Metadata } from "next";
 
