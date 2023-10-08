@@ -46,7 +46,11 @@ function ImageList({
       <button
         key={index}
         className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
-        onClick={() => setShowCarousel(true)}
+        onClick={() => {
+          setShowCarousel(true);
+          setSelectedImageIndex(index);
+          setLastHoverIndex(index);
+        }}
         onMouseEnter={() => {
           setSelectedImageIndex(index);
           setLastHoverIndex(index);

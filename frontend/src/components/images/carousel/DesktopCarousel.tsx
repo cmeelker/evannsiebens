@@ -55,6 +55,20 @@ export default function DesktopCarousel({
     };
   }, [setShowCarousel]);
 
+  // Make sure dialog can be closed via escape
+  useEffect(() => {
+    const handleEscDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setShowCarousel(false);
+      }
+    };
+    window.addEventListener("keydown", handleEscDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscDown);
+    };
+  }, [setShowCarousel]);
+
   const opacityClass = showCarousel
     ? "opacity-100"
     : "opacity-0 pointer-events-none";
