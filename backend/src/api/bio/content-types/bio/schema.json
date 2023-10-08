@@ -4,7 +4,8 @@
   "info": {
     "singularName": "bio",
     "pluralName": "bios",
-    "displayName": "Bio"
+    "displayName": "Bio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +15,12 @@
     "Description": {
       "type": "richtext",
       "required": true
+    },
+    "Seo": {
+      "displayName": "Seo",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
