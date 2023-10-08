@@ -12,7 +12,7 @@ export interface Project {
 export function mapProject(project: any): Project {
   return {
     id: project.id,
-    slug: project.attributes.Slug,
+    slug: project.attributes.slug,
     title: project.attributes.Title,
     year: project.attributes.Year,
     description: project.attributes.Description,

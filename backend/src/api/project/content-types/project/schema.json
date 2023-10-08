@@ -29,11 +29,9 @@
         "images"
       ]
     },
-    "Slug": {
-      "type": "string",
-      "required": true,
-      "unique": true,
-      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
     }
   }
 }
