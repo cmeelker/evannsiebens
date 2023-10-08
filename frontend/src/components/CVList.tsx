@@ -91,7 +91,7 @@ function CVSection({
 
 function CVItems({ items }: { items: CVItem[] }) {
   return (
-    <div className="flex flex-col gap-10 my-4 lg:my-10">
+    <div className="flex flex-col gap-5 lg:gap-10 my-4 lg:my-10">
       {items.map((item) => {
         return (
           <div key={item.id}>
