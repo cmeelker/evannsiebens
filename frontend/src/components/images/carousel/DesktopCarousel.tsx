@@ -6,18 +6,20 @@ import Image from "next/image";
 export default function DesktopCarousel({
   images,
   showCarousel,
+  initialIndex,
   setShowCarousel,
 }: {
   images: StrapiImage[];
   showCarousel: boolean;
+  initialIndex: number;
   setShowCarousel: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(initialIndex);
 
   var settings = {
     speed: 500,
     arrows: false,
-    beforeChange: (oldIndex: number, newIndex: number) => {
+    afterChange: (newIndex: number) => {
       setCurrentSlide(newIndex);
     },
   };
@@ -30,6 +32,12 @@ export default function DesktopCarousel({
     }
   };
 
+  // Workaround to set initial slide
+  if (sliderRef.current) {
+    sliderRef.current.slickGoTo(initialIndex, true);
+  }
+
+  // Handle outside click to close carousel
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -45,14 +53,14 @@ export default function DesktopCarousel({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [setShowCarousel]);
 
   const opacityClass = showCarousel
     ? "opacity-100"
     : "opacity-0 pointer-events-none";
 
   return (
-    <div className={`${opacityClass} transition-all duration-300`}>
+    <div className={`${opacityClass} transition-all duration-500`}>
       <div className="w-screen h-screen bg-mirage/50 fixed top-0 left-0">
         <div
           ref={carouselRef}
@@ -73,9 +81,12 @@ export default function DesktopCarousel({
             })}
           </Slider>
           <div className="flex justify-between -mt-2">
-            <div className="text-nav w-fit">
-              {images[currentSlide].alt || "Default description"}
+            <div>
+              {images[currentSlide].alt && (
+                <div className="text-nav w-fit">{images[currentSlide].alt}</div>
+              )}
             </div>
+
             <CarouselNavigation
               currentSlide={currentSlide}
               nextSlide={nextSlide}
@@ -104,12 +115,12 @@ function CarouselNavigation({
           key={index}
           className={`${
             currentSlide === index ? "" : "text-mirage/50"
-          } transition-all duration-500`}
+          } transition-all duration-300`}
         >
           {index + 1}
         </div>
       ))}
-      <button className="ml-6" onClick={nextSlide}>
+      <button className="ml-6" onClick={() => nextSlide()}>
         ⇉
       </button>
     </div>
