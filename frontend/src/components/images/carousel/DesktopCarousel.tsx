@@ -83,7 +83,9 @@ export default function DesktopCarousel({
           <div className="flex justify-between -mt-2">
             <div>
               {images[currentSlide].alt && (
-                <div className="text-nav w-fit">{images[currentSlide].alt}</div>
+                <div className="text-nav w-fit">
+                  {images[currentSlide].caption}
+                </div>
               )}
             </div>
 

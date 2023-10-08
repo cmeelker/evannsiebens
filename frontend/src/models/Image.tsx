@@ -2,6 +2,7 @@ export interface StrapiImage {
   id: string;
   url: string;
   alt: string;
+  caption: string;
 }
 
 export function mapImage(image: any): StrapiImage {
@@ -14,5 +15,6 @@ export function mapImage(image: any): StrapiImage {
     id: image.id,
     url: `${urlPrefix}${image.attributes.url}`,
     alt: image.attributes.alternativeText,
+    caption: image.attributes.caption,
   };
 }
