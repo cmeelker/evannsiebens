@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ImageCount from "./ImageCount";
+import ImageCount from "../ImageCount";
 import { useState } from "react";
 
 export default function ImageCarousel({ media }: { media: StrapiImage[] }) {
@@ -14,8 +14,6 @@ export default function ImageCarousel({ media }: { media: StrapiImage[] }) {
 
   var settings = {
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
     arrows: false,
     beforeChange: (oldIndex: number, newIndex: number) => {
       setCurrentSlide(newIndex);

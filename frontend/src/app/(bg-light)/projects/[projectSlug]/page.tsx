@@ -1,7 +1,6 @@
-import ImageCarousel from "@/components/images/ImageCarousel";
+import ImageCarousel from "@/components/images/carousel/MobileCarousel";
 import ProjectImagesList from "@/components/images/ImageList";
 import Richtext from "@/components/Richtext";
-import { StrapiImage } from "@/models/Image";
 import { getProject } from "@/services/projectService";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";

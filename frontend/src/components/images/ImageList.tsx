@@ -1,13 +1,10 @@
 "use client";
 
-// TO DO:
-// Mobile carousel
-// OnClick carousel desktop
-
 import { StrapiImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import ImageCount from "./ImageCount";
+import DesktopCarousel from "./carousel/DesktopCarousel";
 
 export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
@@ -17,13 +14,11 @@ export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
     <>
       <ImageList
         images={media}
-        showCarousel={showCarousel}
         setShowCarousel={setShowCarousel}
-        selectedImageIndex={selectedImageIndex}
         setSelectedImageIndex={setSelectedImageIndex}
       />
       <ImageCount selected={selectedImageIndex} total={media.length} />
-      <ImageCarousel
+      <DesktopCarousel
         images={media}
         showCarousel={showCarousel}
         setShowCarousel={setShowCarousel}
@@ -34,20 +29,16 @@ export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
 
 function ImageList({
   images,
-  showCarousel,
   setShowCarousel,
-  selectedImageIndex,
   setSelectedImageIndex,
 }: {
   images: StrapiImage[];
-  showCarousel: boolean;
   setShowCarousel: Dispatch<SetStateAction<boolean>>;
-  selectedImageIndex: number;
   setSelectedImageIndex: Dispatch<SetStateAction<number>>;
 }) {
   return images.map((image, index) => {
     return (
-      <li
+      <button
         key={index}
         className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
         onClick={() => setShowCarousel(true)}
@@ -60,31 +51,7 @@ function ImageList({
           alt={image.alt || ""}
           fill={true}
         />
-      </li>
+      </button>
     );
   });
-}
-
-function ImageCarousel({
-  images,
-  showCarousel,
-  setShowCarousel,
-}: {
-  images: StrapiImage[];
-  showCarousel: boolean;
-  setShowCarousel: Dispatch<SetStateAction<boolean>>;
-}) {
-  // todo: animation toevoegen
-
-  return <></>;
-
-  //   if (!showCarousel) {
-  //     return <></>;
-  //   }
-
-  //   return (
-  //     <div className="w-screen h-screen bg-mirage/50 fixed top-0 left-0">
-  //       <div className="w-[400px] h-[400px] bg-pink-400 fixed top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"></div>
-  //     </div>
-  //   );
 }
