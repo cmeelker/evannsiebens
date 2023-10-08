@@ -1,4 +1,4 @@
-import ProjectGrid from "@/components/ProjectGrid";
+import ProjectGrid from "@/components/projects/ProjectGrid";
 import { getProjects } from "@/services/projectService";
 
 export const dynamic = "force-dynamic";

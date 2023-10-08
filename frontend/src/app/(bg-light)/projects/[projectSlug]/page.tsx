@@ -1,4 +1,5 @@
-import ProjectImages from "@/components/ProjectImages";
+import ImageCarousel from "@/components/images/ImageCarousel";
+import ProjectImagesList from "@/components/images/ImageList";
 import Richtext from "@/components/Richtext";
 import { StrapiImage } from "@/models/Image";
 import { getProject } from "@/services/projectService";
@@ -27,7 +28,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   });
   return (
     <div className="relative">
-      <div className="mr-8 md:w-[86%]">
+      <div className="md:mr-8 md:w-[86%]">
+        <div className="flex md:hidden">
+          <ImageCarousel media={project.media} />
+        </div>
+
         <h1>
           {project.title}, {project.year}
         </h1>
@@ -35,7 +40,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <Richtext text={project.description} />
       </div>
       <ul className="w-[12%] hidden md:flex flex-col items-end absolute top-0 right-0 ">
-        <ProjectImages media={project.media} />
+        <ProjectImagesList media={project.media} />
       </ul>
     </div>
   );

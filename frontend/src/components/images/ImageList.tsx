@@ -8,7 +8,7 @@ import { StrapiImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 
-export default function ProjectImages({ media }: { media: StrapiImage[] }) {
+export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
   const [showCarousel, setShowCarousel] = useState(false);
 
