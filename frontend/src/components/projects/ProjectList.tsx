@@ -48,7 +48,7 @@ function HoverImage({
   const opacityClass = showImage ? "opacity-100" : "opacity-0";
 
   return (
-    <div className="w-[45%] xl:w-[55%] absolute top-0 right-0 h-full pointer-events-none ">
+    <div className="w-[45%] xl:w-[55%] absolute top-0 right-0 h-full pointer-events-none">
       <div
         className={`sticky top-0 w-full h-[25rem] xl:h-[30rem] lg:block hidden transition-all duration-300 delay-100 ${opacityClass}`}
       >

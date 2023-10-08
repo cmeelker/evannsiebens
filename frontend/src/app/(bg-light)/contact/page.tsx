@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 export default async function ContactPage() {
   const contactPage = await getContactPage();
 
-  return <Richtext text={contactPage.description} />;
+  return (
+    <div className="w-[86%]">
+      <Richtext text={contactPage.description} />
+    </div>
+  );
 }
