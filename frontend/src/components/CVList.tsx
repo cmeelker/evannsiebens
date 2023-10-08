@@ -57,15 +57,15 @@ function CVSection({
 
   return (
     <div className={sectionStyle}>
-      <div className="flex transition-all duration-300">
+      <div className="flex transition-all duration-300 items-center">
         <div
           className={`${
             sectionState === "hovered" || sectionState === "expanded"
-              ? "opacity-100 w-[2.3rem]"
+              ? "opacity-100 w-[2rem] lg:w-[3rem]"
               : "opacity-0 w-0"
           } transition-all duration-300`}
         >
-          <div className="mr-2">⇉</div>
+          <div className="mr-2 pb-1">⇉</div>
         </div>
 
         <h1>

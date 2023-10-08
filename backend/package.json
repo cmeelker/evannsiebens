@@ -17,7 +17,6 @@
     "@strapi/strapi": "4.13.3",
     "better-sqlite3": "8.5.0",
     "pg": "^8.11.3",
-    "strapi-plugin-populate-deep": "^3.0.0",
     "strapi-provider-upload-do": "^3.6.9"
   },
   "author": {
