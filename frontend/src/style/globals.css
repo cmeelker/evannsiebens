@@ -11,6 +11,10 @@
   font-display: swap;
 }
 
+.link-hover a {
+  @apply hover:opacity-70;
+}
+
 body {
   @apply font-bold text-mirage text-lg;
   font-family: "Arial Grotesk";
