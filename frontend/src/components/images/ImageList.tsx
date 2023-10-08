@@ -7,6 +7,7 @@
 import { StrapiImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
+import ImageCount from "./ImageCount";
 
 export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
@@ -28,14 +29,6 @@ export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
         setShowCarousel={setShowCarousel}
       />
     </>
-  );
-}
-
-function ImageCount({ selected, total }: { selected: number; total: number }) {
-  return (
-    <div className="absolute text-nav">
-      {selected === -1 ? 0 : selected + 1}/{total}
-    </div>
   );
 }
 
