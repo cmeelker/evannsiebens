@@ -1,4 +1,5 @@
 export interface CVSection {
+  id: number;
   title: string;
   items: CVItem[];
 }
@@ -17,8 +18,9 @@ export function mapCVItem(item: any): CVItem {
   };
 }
 
-export function mapCVSection(section: any): CVSection {
+export function mapCVSection(section: any, id: number): CVSection {
   return {
+    id: id,
     title: section.Title,
     items: section.Item.map(mapCVItem),
   };

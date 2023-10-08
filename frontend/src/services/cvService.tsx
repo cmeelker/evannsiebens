@@ -7,7 +7,7 @@ export async function getCVSections() {
   );
 
   const sections: CVSection[] = res.data.data.attributes.Sections.map(
-    (section: any) => mapCVSection(section)
+    (section: any, index: number) => mapCVSection(section, index)
   );
   return sections;
 }
