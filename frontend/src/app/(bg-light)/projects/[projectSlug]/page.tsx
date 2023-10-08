@@ -5,6 +5,8 @@ import { getProject } from "@/services/projectService";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 interface ProjectPageProps {
   params: {
     projectSlug: string;

@@ -2,6 +2,8 @@ import Richtext from "@/components/Richtext";
 import { getContactPage } from "@/services/contactService";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Evann Siebens / Contact",
 };
