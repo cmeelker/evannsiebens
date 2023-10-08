@@ -1,5 +1,9 @@
 "use client";
 
+// TO DO:
+// Mobile carousel
+// OnClick carousel desktop
+
 import { StrapiImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";

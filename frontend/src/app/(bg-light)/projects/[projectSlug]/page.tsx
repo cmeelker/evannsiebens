@@ -27,14 +27,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   });
   return (
     <div className="relative">
-      <div className="mr-8 w-[86%]">
+      <div className="mr-8 md:w-[86%]">
         <h1>
           {project.title}, {project.year}
         </h1>
 
         <Richtext text={project.description} />
       </div>
-      <ul className="w-[12%] flex flex-col items-end absolute top-0 right-0 ">
+      <ul className="w-[12%] hidden md:flex flex-col items-end absolute top-0 right-0 ">
         <ProjectImages media={project.media} />
       </ul>
     </div>
