@@ -42,7 +42,7 @@ export default function CVList({ cvPage }: { cvPage: CVPage }) {
       <a
         download={`${cvPage.pdf.name}.pdf`}
         href={cvPage.pdf.url}
-        className="text-nav lg:-mt-2 hover:text-mirage/50 lg:relative fixed bottom-0"
+        className="text-nav text-lg lg:-mt-2 hover:text-mirage/50 lg:relative fixed bottom-0"
         target="_blank"
       >
         PDF
