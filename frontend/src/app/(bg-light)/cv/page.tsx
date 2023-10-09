@@ -1,5 +1,5 @@
 import CVList from "@/components/CVList";
-import { getCVSections } from "@/services/cvService";
+import { getCVPage } from "@/services/cvService";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CVPage() {
-  const sections = await getCVSections();
+  const cvPage = await getCVPage();
 
-  return <CVList sections={sections} />;
+  return <CVList cvPage={cvPage} />;
 }

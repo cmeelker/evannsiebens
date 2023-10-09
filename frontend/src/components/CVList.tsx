@@ -1,6 +1,6 @@
 "use client";
 
-import { CVItem, CVSection } from "@/models/CV";
+import { CVItem, CVPage, CVSection } from "@/models/CV";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useCollapse } from "react-collapsed";
 
@@ -11,32 +11,42 @@ type SectionState =
   | "expanded"
   | "unhovered";
 
-export default function CVList({ sections }: { sections: CVSection[] }) {
+export default function CVList({ cvPage }: { cvPage: CVPage }) {
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
   const [hoveredSection, sethoveredSection] = useState<number | null>(null);
 
   return (
-    <div className="md:w-[86%]">
-      {sections.map((section) => (
-        <div
-          key={section.id}
-          onMouseEnter={() => sethoveredSection(section.id)}
-          onMouseLeave={() => sethoveredSection(null)}
-          className="w-fit"
-        >
-          <CVSection
+    <div className="flex justify-between">
+      <div className="md:w-[86%]">
+        {cvPage.sections.map((section) => (
+          <div
             key={section.id}
-            section={section}
-            expandedSection={expandedSection}
-            setExpandedSection={setExpandedSection}
-            sectionState={getSectionState(
-              section.id,
-              expandedSection,
-              hoveredSection
-            )}
-          />
-        </div>
-      ))}
+            onMouseEnter={() => sethoveredSection(section.id)}
+            onMouseLeave={() => sethoveredSection(null)}
+            className="w-fit"
+          >
+            <CVSection
+              key={section.id}
+              section={section}
+              expandedSection={expandedSection}
+              setExpandedSection={setExpandedSection}
+              sectionState={getSectionState(
+                section.id,
+                expandedSection,
+                hoveredSection
+              )}
+            />
+          </div>
+        ))}
+      </div>
+      <a
+        download={`${cvPage.pdf.name}.pdf`}
+        href={cvPage.pdf.url}
+        className="text-nav lg:-mt-2 hover:text-mirage/50 lg:relative fixed bottom-0"
+        target="_blank"
+      >
+        PDF
+      </a>
     </div>
   );
 }
