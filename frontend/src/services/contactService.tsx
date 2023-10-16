@@ -1,10 +1,14 @@
+import contentfulClient from "@/clients/contentful";
 import { mapContact } from "@/models/Contact";
-import axios from "axios";
 
 export async function getContactPage() {
-  const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/contact?populate=*`
-  );
+  const client = contentfulClient();
 
-  return mapContact(res.data.data);
+  const res = await client
+    .getEntries({ content_type: "info" })
+    .then((response) =>
+      response.items.find((item) => item.fields.title === "Contact")
+    );
+
+  return mapContact(res);
 }

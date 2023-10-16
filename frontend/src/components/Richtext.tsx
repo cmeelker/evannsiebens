@@ -7,6 +7,7 @@ export default function Richtext({ document }: { document: Document }) {
     renderNode: {
       [INLINES.HYPERLINK]: openLinksInNewTabs,
     },
+    renderText: (text: string) => addLineBreakTagToNewLines(text),
   });
 
   return <div className="flex flex-col gap-8">{formattedText}</div>;
@@ -21,4 +22,15 @@ function openLinksInNewTabs(
       {children}
     </a>
   );
+}
+
+function addLineBreakTagToNewLines(text: string) {
+  return text
+    .split("\n")
+    .reduce(
+      (children: (string | false | JSX.Element)[], textSegment, index) => {
+        return [...children, index > 0 && <br key={index} />, textSegment];
+      },
+      []
+    );
 }

@@ -1,9 +1,10 @@
+import { Document } from "@contentful/rich-text-types";
 export interface Contact {
-  description: string;
+  description: Document;
 }
 
 export function mapContact(contact: any): Contact {
   return {
-    description: contact.attributes.Description,
+    description: contact.fields.description,
   };
 }

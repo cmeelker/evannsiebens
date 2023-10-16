@@ -1,6 +1,5 @@
 import contentfulClient from "@/clients/contentful";
 import { mapBio } from "@/models/Bio";
-import axios from "axios";
 
 export async function getBioPage() {
   const client = contentfulClient();
