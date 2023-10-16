@@ -16,10 +16,12 @@ export async function getProject(slug: string) {
   const client = contentfulClient();
 
   const res = await client
-    .getEntries({ content_type: "project", include: 10 })
-    .then((response) =>
-      response.items.find((item) => item.fields.slug === slug)
-    );
+    .getEntries({
+      content_type: "project",
+      include: 10,
+      "fields.slug": slug,
+    })
+    .then((response) => response.items[0]);
 
   return mapProject(res);
 }
