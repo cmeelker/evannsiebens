@@ -1,6 +1,6 @@
 "use client";
 
-import { StrapiImage } from "@/models/Image";
+import { ContentfulImage } from "@/models/Image";
 import Slider from "react-slick";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ImageCount from "../ImageCount";
 import { useState } from "react";
 
-export default function ImageCarousel({ media }: { media: StrapiImage[] }) {
+export default function ImageCarousel({ media }: { media: ContentfulImage[] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   var settings = {

@@ -1,21 +1,25 @@
+import contentfulClient from "@/clients/contentful";
 import { Project, mapProject } from "@/models/Project";
-import axios from "axios";
 
 export async function getProjects() {
-  const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/projects?sort=Year:DESC&populate=*`
-  );
+  const client = contentfulClient();
 
-  const projects: Project[] = res.data.data.map((project: any) =>
-    mapProject(project)
-  );
+  const res = await client
+    .getEntries({ content_type: "project", include: 10 })
+    .then((response) => response.items);
+
+  const projects: Project[] = res.map((project: any) => mapProject(project));
   return projects;
 }
 
 export async function getProject(slug: string) {
-  const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/projects/${slug}?populate=*`
-  );
+  const client = contentfulClient();
 
-  return mapProject(res.data.data);
+  const res = await client
+    .getEntries({ content_type: "project", include: 10 })
+    .then((response) =>
+      response.items.find((item) => item.fields.slug === slug)
+    );
+
+  return mapProject(res);
 }

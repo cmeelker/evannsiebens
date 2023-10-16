@@ -33,8 +33,8 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
           <Link href={`/projects/${project.slug}`}>
             <Image
               className="object-cover hover:brightness-125"
-              src={project.media[0].url}
-              alt={project.media[0].alt || ""}
+              src={project.images[0].url}
+              alt={project.images[0].alt || ""}
               fill={true}
             />
           </Link>

@@ -1,4 +1,4 @@
-import { StrapiImage } from "@/models/Image";
+import { ContentfulImage } from "@/models/Image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -9,7 +9,7 @@ export default function DesktopCarousel({
   initialIndex,
   setShowCarousel,
 }: {
-  images: StrapiImage[];
+  images: ContentfulImage[];
   showCarousel: boolean;
   initialIndex: number;
   setShowCarousel: Dispatch<SetStateAction<boolean>>;
