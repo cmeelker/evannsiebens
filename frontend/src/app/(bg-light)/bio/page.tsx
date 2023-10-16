@@ -1,4 +1,5 @@
 import Richtext from "@/components/Richtext";
+
 import { getBioPage } from "@/services/bioService";
 import type { Metadata } from "next";
 
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 export default async function BioPage() {
-  const contactPage = await getBioPage();
+  const bioPage = await getBioPage();
 
   return (
     <div className="md:w-[86%]">
-      <Richtext text={contactPage.description} />
+      <Richtext document={bioPage.description} />
     </div>
   );
 }
