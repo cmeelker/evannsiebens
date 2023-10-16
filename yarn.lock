@@ -2027,6 +2027,15 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
+"@types/react@^17.0.0 || ^18.0.0":
+  version "18.2.27"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.27.tgz#746e52b06f3ccd5d7a724fd53769b70792601440"
+  integrity sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
 "@types/responselike@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/responselike/-/responselike-1.0.0.tgz#251f4fe7d154d2bad125abe1b429b23afd262e29"
@@ -2097,6 +2106,11 @@
   resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
   integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
 
+"@types/vimeo__player@^2.10.0":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@types/vimeo__player/-/vimeo__player-2.18.1.tgz#7bf6a31f12116efe984b1a907d43a93fef15ddce"
+  integrity sha512-E9uxBdAKiovroWdnYrRsxEf1LgDYiYB+Ox7QlEidGtFRLC5EkHAUgJonAsDsyjRcGDEE1r+2Wqmw6pYSllyKpg==
+
 "@types/ws@^8.5.5":
   version "8.5.5"
   resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.5.5.tgz#af587964aa06682702ee6dcbc7be41a80e4b28eb"
@@ -2161,6 +2175,16 @@
     "@typescript-eslint/types" "6.7.0"
     eslint-visitor-keys "^3.4.1"
 
+"@u-wave/react-vimeo@0.9.10":
+  version "0.9.10"
+  resolved "https://registry.yarnpkg.com/@u-wave/react-vimeo/-/react-vimeo-0.9.10.tgz#155a033a34ad04b155a4b8814fc18f8452081e97"
+  integrity sha512-fNpRZHPTDvz3J/6aFC7C4aB4rD3WjJ7h0f1VO7OC/GtGwXUsKSqDbEG2J8TdT5gQVtLGwupZMGzfbD5f0dZs1w==
+  dependencies:
+    "@types/react" "^17.0.0 || ^18.0.0"
+    "@types/vimeo__player" "^2.10.0"
+    "@vimeo/player" "^2.16.4"
+    prop-types "^15.7.2"
+
 "@ucast/core@^1.0.0", "@ucast/core@^1.4.1", "@ucast/core@^1.6.1":
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/@ucast/core/-/core-1.10.2.tgz#30b6b893479823265368e528b61b042f752f2c92"
@@ -2218,6 +2242,14 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
+
+"@vimeo/player@^2.16.4":
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/@vimeo/player/-/player-2.20.1.tgz#b2db8651cfed71009475528019977bf8e8c3dadf"
+  integrity sha512-eoKkqsMY33RQn8lFtlUbb3uo+xDL3V8PTN01SdrJ1E9PI+5pLyqNGh/GO/2EyX9Vr6antLm0/v36ABF2rcwXIQ==
+  dependencies:
+    native-promise-only "0.8.1"
+    weakmap-polyfill "2.0.4"
 
 "@webassemblyjs/ast@1.11.6", "@webassemblyjs/ast@^1.11.5":
   version "1.11.6"
@@ -7629,6 +7661,11 @@ napi-build-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/napi-build-utils/-/napi-build-utils-1.0.2.tgz#b1fddc0b2c46e380a0b7a76f984dd47c41a13806"
   integrity sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==
 
+native-promise-only@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/native-promise-only/-/native-promise-only-0.8.1.tgz#20a318c30cb45f71fe7adfbf7b21c99c1472ef11"
+  integrity sha512-zkVhZUA3y8mbz652WrL5x0fB0ehrBkulWT3TomAQ9iDtyXZvzKeEA6GPxAItBYeNYl5yngKRX612qHOhvMkDeg==
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -10809,6 +10846,11 @@ wcwidth@^1.0.1:
   integrity sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==
   dependencies:
     defaults "^1.0.3"
+
+weakmap-polyfill@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/weakmap-polyfill/-/weakmap-polyfill-2.0.4.tgz#bcc301e4c8eb4eda3e406f08f1a691093e407884"
+  integrity sha512-ZzxBf288iALJseijWelmECm/1x7ZwQn3sMYIkDr2VvZp7r6SEKuT8D0O9Wiq6L9Nl5mazrOMcmiZE/2NCenaxw==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
