@@ -23,29 +23,24 @@ export interface CVPage {
 
 export function mapCVItem(item: any): CVItem {
   return {
-    id: item.id,
-    title: item.Title,
-    year: item.Year,
+    id: item.sys.id,
+    title: item.fields.title,
+    year: item.fields.year,
   };
 }
 
 export function mapCVSection(section: any, id: number): CVSection {
   return {
-    id: id,
-    title: section.Title,
-    items: section.Item.map(mapCVItem),
+    id: section.sys.id,
+    title: section.fields.title,
+    items: section.fields.items.map(mapCVItem),
   };
 }
 
 export function mapPDF(pdf: any): PDF {
-  const urlPrefix =
-    process.env.NODE_ENV === "development"
-      ? process.env.NEXT_PUBLIC_API_URL
-      : "";
-
   return {
-    id: pdf.id,
-    name: pdf.attributes.name,
-    url: `${urlPrefix}${pdf.attributes.url}`,
+    id: pdf.sys.id,
+    name: pdf.fields.title,
+    url: pdf.fields.file.url,
   };
 }
