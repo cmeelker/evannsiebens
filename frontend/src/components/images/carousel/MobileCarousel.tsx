@@ -21,7 +21,7 @@ export default function ImageCarousel({ media }: { media: ContentfulImage[] }) {
   };
   return (
     <div className="w-screen mb-16 mt-2 -ml-3">
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         {media.map((image, index) => {
           return (
             <div key={index} className="h-[20rem] relative">
@@ -34,7 +34,7 @@ export default function ImageCarousel({ media }: { media: ContentfulImage[] }) {
             </div>
           );
         })}
-      </Slider>
+      </Slider> */}
       <div className="text-lg absolute top-0 right-0 -mr-3">
         <ImageCount selected={currentSlide} total={media.length} />
       </div>
