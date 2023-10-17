@@ -4,7 +4,6 @@ import { Project } from "@/models/Project";
 import { getLastDigit } from "@/utils/lastDigit";
 import Link from "next/link";
 import Image from "next/image";
-import { AppearInView } from "@/effects/AppearInView";
 import Vimeo from "@u-wave/react-vimeo";
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
@@ -33,18 +32,15 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
           <Link href={`/projects/${project.slug}`}>
             <Image
               className="object-cover hover:brightness-125"
-              src={project.media[0].url}
-              alt={project.media[0].alt || ""}
+              src={project.images[0].url}
+              alt={project.images[0].alt || ""}
               fill={true}
             />
           </Link>
         );
 
         return (
-          <AppearInView
-            className="items-stretch flex flex-col"
-            key={project.id}
-          >
+          <ul className="items-stretch flex flex-col" key={project.id}>
             <li
               className={`hidden md:block ${
                 rowStyles[getLastDigit(index)]
@@ -56,7 +52,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             <li className="md:hidden flex w-full h-[30vh] sm:h-[45vh] relative">
               {image}
             </li>
-          </AppearInView>
+          </ul>
         );
       })}
     </ul>

@@ -14,15 +14,9 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "127.0.0.1",
-        port: "1337",
-        pathname: "/uploads/**",
-      },
-      {
         protocol: "https",
-        hostname: "evannsiebens-strapi.ams3.digitaloceanspaces.com",
-        pathname: "/**",
+        hostname: "images.ctfassets.net",
+        pathname: `/${process.env.CONTENTFUL_SPACE_ID}/**`,
       },
     ],
   },

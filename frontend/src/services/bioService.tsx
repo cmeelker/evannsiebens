@@ -1,10 +1,14 @@
+import contentfulClient from "@/clients/contentful";
 import { mapBio } from "@/models/Bio";
-import axios from "axios";
 
 export async function getBioPage() {
-  const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/bio?populate=*`
-  );
+  const client = contentfulClient();
 
-  return mapBio(res.data.data);
+  const res = await client
+    .getEntries({ content_type: "info" })
+    .then((response) =>
+      response.items.find((item) => item.fields.title === "Bio")
+    );
+
+  return mapBio(res);
 }

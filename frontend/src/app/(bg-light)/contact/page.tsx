@@ -13,7 +13,7 @@ export default async function ContactPage() {
 
   return (
     <div className="md:w-[86%]">
-      <Richtext text={contactPage.description} />
+      <Richtext document={contactPage.description} />
     </div>
   );
 }

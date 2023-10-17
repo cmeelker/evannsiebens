@@ -1,12 +1,16 @@
 "use client";
 
-import { StrapiImage } from "@/models/Image";
+import { ContentfulImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import ImageCount from "./ImageCount";
 import DesktopCarousel from "./carousel/DesktopCarousel";
 
-export default function ProjectImagesList({ media }: { media: StrapiImage[] }) {
+export default function ProjectImagesList({
+  media,
+}: {
+  media: ContentfulImage[];
+}) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
   const [showCarousel, setShowCarousel] = useState(false);
   const [lastHoverIndex, setLastHoverIndex] = useState(0);
@@ -36,7 +40,7 @@ function ImageList({
   setSelectedImageIndex,
   setLastHoverIndex,
 }: {
-  images: StrapiImage[];
+  images: ContentfulImage[];
   setShowCarousel: Dispatch<SetStateAction<boolean>>;
   setSelectedImageIndex: Dispatch<SetStateAction<number>>;
   setLastHoverIndex: Dispatch<SetStateAction<number>>;

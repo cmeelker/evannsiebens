@@ -4,13 +4,13 @@ import { Project } from "@/models/Project";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { StrapiImage } from "@/models/Image";
+import { ContentfulImage } from "@/models/Image";
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
-  const [currentImage, setCurrentImage] = useState(projects[0].media[0]);
+  const [currentImage, setCurrentImage] = useState(projects[0].images[0]);
   const [showImage, setShowImage] = useState(false);
 
-  function onMouseEnter(image: StrapiImage) {
+  function onMouseEnter(image: ContentfulImage) {
     setCurrentImage(image);
     setShowImage(true);
   }
@@ -24,7 +24,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               <Link
                 className="hover:opacity-70"
                 href={`/projects/${project.slug}`}
-                onMouseOver={() => onMouseEnter(project.media[0])}
+                onMouseOver={() => onMouseEnter(project.images[0])}
                 onMouseLeave={() => setShowImage(false)}
               >
                 {project.title}, {project.year}
@@ -43,7 +43,7 @@ function HoverImage({
   image,
 }: {
   showImage: boolean;
-  image: StrapiImage;
+  image: ContentfulImage;
 }) {
   const opacityClass = showImage ? "opacity-100" : "opacity-0";
 

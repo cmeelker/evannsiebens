@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,25 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "15.18.0",
+    "@contentful/rich-text-types": "16.3.0",
     "@types/node": "20.6.0",
-    "@types/react": "18.2.21",
+    "@types/react": "18.2.28",
     "@types/react-dom": "18.2.7",
-    "@types/react-slick": "0.23.10",
     "@u-wave/react-vimeo": "0.9.10",
     "autoprefixer": "10.4.15",
-    "axios": "^1.5.0",
+    "contentful": "10.6.3",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "postcss": "8.4.29",
     "react": "18.2.0",
-    "react-collapsed": "^4.0.4",
+    "react-collapsed": "4.0.4",
     "react-dom": "18.2.0",
     "react-intersection-observer": "9.5.2",
-    "react-markdown": "9.0.0",
     "react-slick": "0.29.0",
     "slick-carousel": "1.8.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/react-slick": "0.23.10"
   }
 }

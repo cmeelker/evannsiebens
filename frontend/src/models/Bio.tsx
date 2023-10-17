@@ -1,9 +1,10 @@
+import { Document } from "@contentful/rich-text-types";
 export interface Bio {
-  description: string;
+  description: Document;
 }
 
 export function mapBio(bio: any): Bio {
   return {
-    description: bio.attributes.Description,
+    description: bio.fields.description,
   };
 }
