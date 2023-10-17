@@ -2135,10 +2135,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-collapsed@^4.0.4:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-collapsed/-/react-collapsed-4.1.0.tgz#94b077bcd8a9c39fc183c6594a30797a90b9bad1"
-  integrity sha512-c8twhgJmPM2Z7T9tjW9j4pSGuCivhASp8CUuwIjR3Oqq25s+HzM6oCprKSQmPHnDeuIDVAfqAn+b71kjNiWGYg==
+react-collapsed@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-collapsed/-/react-collapsed-4.0.4.tgz#4c6bce3a15286d43e95b6730ad70ec387a54caa9"
+  integrity sha512-8avvmnQxDYTgGZYVP9+3Z7doomxVEBoCkukpTmUHEIrAYvELZ5jNNfYCt/hCpHB6GmQbzZoDmnDupjsnQVgcCQ==
   dependencies:
     tiny-warning "^1.0.3"
 
