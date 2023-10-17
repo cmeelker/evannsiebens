@@ -80,7 +80,7 @@ export default function DesktopCarousel({
           ref={carouselRef}
           className="w-[60vw] h-[60vh] fixed top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
         >
-          {/* <Slider {...settings} ref={sliderRef}>
+          <Slider {...settings} ref={sliderRef}>
             {images.map((image, index) => {
               return (
                 <div key={index} className="w-full h-[60vh] relative">
@@ -93,7 +93,7 @@ export default function DesktopCarousel({
                 </div>
               );
             })}
-          </Slider> */}
+          </Slider>
           <div className="flex justify-between -mt-2">
             <div>
               {images[currentSlide].caption && (
