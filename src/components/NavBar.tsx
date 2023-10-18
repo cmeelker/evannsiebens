@@ -21,7 +21,7 @@ export default function NavBar() {
 
   return (
     <div className="flex m-auto justify-center">
-      <div className="max-w-[88rem] flex justify-between w-full z-50 fixed">
+      <div className="max-w-[140rem] flex justify-between w-full z-50 fixed">
         <ProjectPageOnly>
           <div className="hidden md:flex h-fit">
             <MenuItem href="/projects" label="List" />
