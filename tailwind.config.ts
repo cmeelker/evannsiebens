@@ -25,6 +25,13 @@ const config: Config = {
           letterSpacing: "[-0.06rem]",
         },
       ],
+      xs: [
+        "1rem",
+        {
+          lineHeight: "1rem",
+          letterSpacing: "[-0.06rem]",
+        },
+      ],
     },
     extend: {
       colors: {
