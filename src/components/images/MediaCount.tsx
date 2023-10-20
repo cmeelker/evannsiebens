@@ -1,4 +1,4 @@
-export default function ImageCount({
+export default function MediaCount({
   selected,
   total,
 }: {

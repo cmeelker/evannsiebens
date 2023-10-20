@@ -1,5 +1,5 @@
-import ImageCarousel from "@/components/images/carousel/MobileCarousel";
-import ProjectImagesList from "@/components/images/ImageList";
+import MobileCarousel from "@/components/images/carousel/MobileCarousel";
+import MediaList from "@/components/images/MediaList";
 import Richtext from "@/components/Richtext";
 import { getProject } from "@/services/projectService";
 import { Metadata } from "next";
@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <div className="relative">
       <div className="md:mr-8 md:w-[86%]">
         <div className="flex md:hidden">
-          <ImageCarousel media={project.images} />
+          <MobileCarousel media={project.images} />
         </div>
 
         <h1>
@@ -41,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <Richtext document={project.description} />
       </div>
       <ul className="w-[12%] hidden md:flex flex-col items-end absolute top-0 right-0 ">
-        <ProjectImagesList media={project.images} />
+        <MediaList media={project.images} />
       </ul>
     </div>
   );

@@ -3,14 +3,10 @@
 import { ContentfulImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
-import ImageCount from "./ImageCount";
+import MediaCount from "./MediaCount";
 import DesktopCarousel from "./carousel/DesktopCarousel";
 
-export default function ProjectImagesList({
-  media,
-}: {
-  media: ContentfulImage[];
-}) {
+export default function MediaList({ media }: { media: ContentfulImage[] }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
   const [showCarousel, setShowCarousel] = useState(false);
   const [lastHoverIndex, setLastHoverIndex] = useState(0);
@@ -23,7 +19,7 @@ export default function ProjectImagesList({
         setSelectedImageIndex={setSelectedImageIndex}
         setLastHoverIndex={setLastHoverIndex}
       />
-      <ImageCount selected={selectedImageIndex} total={media.length} />
+      <MediaCount selected={selectedImageIndex} total={media.length} />
       <DesktopCarousel
         images={media}
         showCarousel={showCarousel}

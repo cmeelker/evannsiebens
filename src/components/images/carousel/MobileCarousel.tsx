@@ -6,10 +6,14 @@ import Image from "next/image";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ImageCount from "../ImageCount";
+import MediaCount from "../MediaCount";
 import { useState } from "react";
 
-export default function ImageCarousel({ media }: { media: ContentfulImage[] }) {
+export default function MobileCarousel({
+  media,
+}: {
+  media: ContentfulImage[];
+}) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   var settings = {
@@ -36,7 +40,7 @@ export default function ImageCarousel({ media }: { media: ContentfulImage[] }) {
         })}
       </Slider>
       <div className="text-lg absolute top-0 right-0 -mr-3">
-        <ImageCount selected={currentSlide} total={media.length} />
+        <MediaCount selected={currentSlide} total={media.length} />
       </div>
     </div>
   );
