@@ -1,4 +1,4 @@
-import { ContentfulGif, mapGif } from "./Gif";
+import { ContentfulVideo, mapVideo } from "./Video";
 import { ContentfulImage, mapImage } from "./Image";
 import { Document } from "@contentful/rich-text-types";
 
@@ -9,7 +9,7 @@ export interface Project {
   year: string;
   description: Document;
   images: ContentfulImage[];
-  gif: ContentfulGif;
+  gridVideo: ContentfulVideo;
 }
 
 export function mapProject(project: any): Project {
@@ -20,6 +20,6 @@ export function mapProject(project: any): Project {
     year: project.fields.year,
     description: project.fields.description,
     images: project.fields.images.map((image: any) => mapImage(image)),
-    gif: mapGif(project.fields.gif),
+    gridVideo: mapVideo(project.fields.gif),
   };
 }

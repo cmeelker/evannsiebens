@@ -3,8 +3,8 @@
 import { Project } from "@/models/Project";
 import { getLastDigit } from "@/utils/lastDigit";
 import Link from "next/link";
-import Image from "next/image";
 import Vimeo from "@u-wave/react-vimeo";
+import VideoHoverPlayer from "../videos/VideoHoverPlayer";
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
   const rowStyles = [
@@ -29,13 +29,8 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
     <ul className="flex flex-col gap-10 md:gap-0 items-stretch">
       {projects.map((project: Project, index) => {
         const image = (
-          <Link href={`/projects/${project.slug}`}>
-            <Image
-              className="object-cover hover:brightness-125"
-              src={project.images[0].url}
-              alt={project.images[0].alt || ""}
-              fill={true}
-            />
+          <Link href={`/projects/${project.slug}`} className="w-full h-full">
+            <VideoHoverPlayer />
           </Link>
         );
 
