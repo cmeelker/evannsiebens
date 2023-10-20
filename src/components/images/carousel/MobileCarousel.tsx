@@ -37,8 +37,11 @@ export default function MobileCarousel({ media }: { media: ProjectMedia }) {
         })}
         {media.videos.map((video, index) => {
           return (
-            <div key={index}>
-              <Vimeo video={video.vimeoId} autoplay responsive />
+            <div key={index} className="relative">
+              <div className="w-[90%] h-[85%] absolute z-50"></div>
+              <div>
+                <Vimeo video={video.vimeoId} responsive />
+              </div>
             </div>
           );
         })}
