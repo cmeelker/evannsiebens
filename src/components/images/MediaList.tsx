@@ -5,8 +5,9 @@ import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import MediaCount from "./MediaCount";
 import DesktopCarousel from "./carousel/DesktopCarousel";
+import { ProjectMedia } from "@/models/Project";
 
-export default function MediaList({ media }: { media: ContentfulImage[] }) {
+export default function MediaList({ media }: { media: ProjectMedia }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
   const [showCarousel, setShowCarousel] = useState(false);
   const [lastHoverIndex, setLastHoverIndex] = useState(0);
@@ -14,14 +15,17 @@ export default function MediaList({ media }: { media: ContentfulImage[] }) {
   return (
     <>
       <ImageList
-        images={media}
+        media={media}
         setShowCarousel={setShowCarousel}
         setSelectedImageIndex={setSelectedImageIndex}
         setLastHoverIndex={setLastHoverIndex}
       />
-      <MediaCount selected={selectedImageIndex} total={media.length} />
+      <MediaCount
+        selected={selectedImageIndex}
+        total={media.images.length + media.videos.length}
+      />
       <DesktopCarousel
-        images={media}
+        media={media}
         showCarousel={showCarousel}
         initialIndex={lastHoverIndex}
         setShowCarousel={setShowCarousel}
@@ -31,17 +35,17 @@ export default function MediaList({ media }: { media: ContentfulImage[] }) {
 }
 
 function ImageList({
-  images,
+  media,
   setShowCarousel,
   setSelectedImageIndex,
   setLastHoverIndex,
 }: {
-  images: ContentfulImage[];
+  media: ProjectMedia;
   setShowCarousel: Dispatch<SetStateAction<boolean>>;
   setSelectedImageIndex: Dispatch<SetStateAction<number>>;
   setLastHoverIndex: Dispatch<SetStateAction<number>>;
 }) {
-  return images.map((image, index) => {
+  return media.images.map((image, index) => {
     return (
       <button
         key={index}

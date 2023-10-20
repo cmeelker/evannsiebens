@@ -2,14 +2,15 @@ import { ContentfulImage } from "@/models/Image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
+import { ProjectMedia } from "@/models/Project";
 
 export default function DesktopCarousel({
-  images,
+  media,
   showCarousel,
   initialIndex,
   setShowCarousel,
 }: {
-  images: ContentfulImage[];
+  media: ProjectMedia;
   showCarousel: boolean;
   initialIndex: number;
   setShowCarousel: Dispatch<SetStateAction<boolean>>;
@@ -81,7 +82,7 @@ export default function DesktopCarousel({
           className="w-[60vw] h-[60vh] fixed top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
         >
           <Slider {...settings} ref={sliderRef}>
-            {images.map((image, index) => {
+            {media.images.map((image, index) => {
               return (
                 <div key={index} className="w-full h-[60vh] relative">
                   <Image
@@ -96,18 +97,18 @@ export default function DesktopCarousel({
           </Slider>
           <div className="flex justify-between -mt-2">
             <div>
-              {images[currentSlide].caption && (
+              {media.images[currentSlide].caption && (
                 <div className="text-nav w-fit">
-                  {images[currentSlide].caption}
+                  {media.images[currentSlide].caption}
                 </div>
               )}
             </div>
             <div>
-              {images.length > 1 && (
+              {media.images.length > 1 && (
                 <CarouselNavigation
                   currentSlide={currentSlide}
                   nextSlide={nextSlide}
-                  total={images.length}
+                  total={media.images.length + media.videos.length}
                 />
               )}
             </div>

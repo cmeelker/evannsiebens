@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <div className="relative">
       <div className="md:mr-8 md:w-[86%]">
         <div className="flex md:hidden">
-          <MobileCarousel media={project.images} />
+          <MobileCarousel media={project.media.images} />
         </div>
 
         <h1>
@@ -41,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <Richtext document={project.description} />
       </div>
       <ul className="w-[12%] hidden md:flex flex-col items-end absolute top-0 right-0 ">
-        <MediaList media={project.images} />
+        <MediaList media={project.media} />
       </ul>
     </div>
   );

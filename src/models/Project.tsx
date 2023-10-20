@@ -9,9 +9,13 @@ export interface Project {
   title: string;
   year: string;
   description: Document;
+  media: ProjectMedia;
+}
+
+export interface ProjectMedia {
+  gridVideo: ContentfulVideo;
   images: ContentfulImage[];
   videos: ContentfulVimeo[];
-  gridVideo: ContentfulVideo;
 }
 
 export function mapProject(project: any): Project {
@@ -21,8 +25,10 @@ export function mapProject(project: any): Project {
     title: project.fields.title,
     year: project.fields.year,
     description: project.fields.description,
-    images: project.fields.images.map((image: any) => mapImage(image)),
-    videos: project.fields.video.map((video: any) => mapVimeo(video)),
-    gridVideo: mapVideo(project.fields.gif),
+    media: {
+      gridVideo: mapVideo(project.fields.gif),
+      images: project.fields.images.map((image: any) => mapImage(image)),
+      videos: project.fields.video.map((video: any) => mapVimeo(video)),
+    },
   };
 }
