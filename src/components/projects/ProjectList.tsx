@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ContentfulImage } from "@/models/Image";
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
-  const [currentImage, setCurrentImage] = useState(projects[0].images[0]);
+  const [currentImage, setCurrentImage] = useState(projects[0].media.images[0]);
   const [showImage, setShowImage] = useState(false);
 
   function onMouseEnter(image: ContentfulImage) {
@@ -24,7 +24,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               <Link
                 className="hover:opacity-70"
                 href={`/projects/${project.slug}`}
-                onMouseOver={() => onMouseEnter(project.images[0])}
+                onMouseOver={() => onMouseEnter(project.media.images[0])}
                 onMouseLeave={() => setShowImage(false)}
               >
                 {project.title}, {project.year}
