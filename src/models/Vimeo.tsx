@@ -8,6 +8,6 @@ export function mapVimeo(vimeo: any): ContentfulVimeo {
   return {
     id: vimeo.sys.id,
     title: vimeo.fields.title,
-    vimeoId: vimeo.fields.url.split("/")[-1],
+    vimeoId: vimeo.fields.url.split("/").pop(),
   };
 }

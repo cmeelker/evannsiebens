@@ -27,11 +27,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = await getProject(params.projectSlug).catch(() => {
     redirect("/");
   });
+
   return (
     <div className="relative">
       <div className="md:mr-8 md:w-[86%]">
         <div className="flex md:hidden">
-          <MobileCarousel media={project.media.images} />
+          <MobileCarousel media={project.media} />
         </div>
 
         <h1>

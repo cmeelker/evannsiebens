@@ -3,7 +3,6 @@
 import { Project } from "@/models/Project";
 import { getLastDigit } from "@/utils/lastDigit";
 import Link from "next/link";
-import Vimeo from "@u-wave/react-vimeo";
 import GridVideoPlayer from "../videos/GridVideoPlayer";
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
@@ -19,18 +18,13 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
     "w-[56%] h-[32rem] -mt-[1.7rem] ml-[11%]",
     "w-[40%] h-[24rem] mt-[3.8%] self-end mr-[16%]",
   ];
-  {
-    /* <div className="w-[800px] bg-red-500">
-        <Vimeo video="429414788" autoplay responsive />
-      </div> */
-  }
 
   return (
     <ul className="flex flex-col gap-10 md:gap-0 items-stretch mb-[22vh] md:mb-10">
       {projects.map((project: Project, index) => {
         const image = (
           <Link href={`/projects/${project.slug}`} className="w-full h-full">
-            <GridVideoPlayer video={project.gridVideo} />
+            <GridVideoPlayer video={project.media.gridVideo} />
           </Link>
         );
 
