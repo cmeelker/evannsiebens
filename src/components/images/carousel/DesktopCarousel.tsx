@@ -1,8 +1,8 @@
-import { ContentfulImage } from "@/models/Image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import { ProjectMedia } from "@/models/Project";
+import { stopVideos } from "@/utils/stopVideos";
 
 export default function DesktopCarousel({
   media,
@@ -46,6 +46,7 @@ export default function DesktopCarousel({
         !carouselRef.current.contains(event.target as Node)
       ) {
         setShowCarousel(false);
+        stopVideos();
       }
     };
 
@@ -79,12 +80,15 @@ export default function DesktopCarousel({
       <div className="w-screen h-screen bg-mirage/50 fixed top-0 left-0">
         <div
           ref={carouselRef}
-          className="w-[60vw] h-[60vh] fixed top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
+          className="w-[60vw] h-[calc(0.5625*60vw)] fixed top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
         >
           <Slider {...settings} ref={sliderRef}>
             {media.images.map((image, index) => {
               return (
-                <div key={index} className="w-full h-[60vh] relative">
+                <div
+                  key={index}
+                  className="w-full h-[calc(0.5625*60vw)] relative"
+                >
                   <Image
                     className="object-cover"
                     src={image.url}
@@ -94,14 +98,25 @@ export default function DesktopCarousel({
                 </div>
               );
             })}
+            {media.videos.map((video, index) => {
+              return (
+                <div key={index}>
+                  <iframe
+                    className="h-[calc(0.5625*60vw)]"
+                    src={`https://player.vimeo.com/video/${video.vimeoId}`}
+                    width="100%"
+                  ></iframe>
+                </div>
+              );
+            })}
           </Slider>
           <div className="flex justify-between -mt-2">
             <div>
-              {media.images[currentSlide].caption && (
+              {/* {media.images[currentSlide].caption && (
                 <div className="text-nav w-fit">
                   {media.images[currentSlide].caption}
                 </div>
-              )}
+              )} */}
             </div>
             <div>
               {media.images.length > 1 && (

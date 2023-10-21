@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import MediaCount from "../MediaCount";
 import { useState } from "react";
 import { ProjectMedia } from "@/models/Project";
-import Vimeo from "@u-wave/react-vimeo";
 
 export default function MobileCarousel({ media }: { media: ProjectMedia }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,14 +35,7 @@ export default function MobileCarousel({ media }: { media: ProjectMedia }) {
           );
         })}
         {media.videos.map((video, index) => {
-          return (
-            <div key={index} className="relative">
-              <div className="w-[90%] h-[85%] absolute z-50"></div>
-              <div>
-                <Vimeo video={video.vimeoId} responsive />
-              </div>
-            </div>
-          );
+          return <div key={index}>{/*to do iframe*/}</div>;
         })}
       </Slider>
       <div className="text-lg absolute top-0 right-0 -mr-3">
