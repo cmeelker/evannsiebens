@@ -76,7 +76,7 @@ function ThumbnailList({
         return (
           <button
             key={index}
-            className={`w-full h-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[55rem] relative`}
+            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
             onClick={() => {
               setShowCarousel(true);
               setSelectedImageIndex(index + media.images.length);
@@ -91,12 +91,12 @@ function ThumbnailList({
               stopVideos();
             }}
           >
-            <iframe
-              className="aspect-video"
-              src={`https://player.vimeo.com/video/${video.vimeoId}`}
-              width="100%"
-              height="100%"
-            ></iframe>
+            <Image
+              className="object-cover "
+              src={video.thumbnailUrl}
+              alt={video.title}
+              fill={true}
+            />
           </button>
         );
       })}

@@ -18,6 +18,11 @@ module.exports = {
         hostname: "images.ctfassets.net",
         pathname: `/${process.env.CONTENTFUL_SPACE_ID}/**`,
       },
+      {
+        protocol: "https",
+        hostname: "vumbnail.com",
+        pathname: `/**`,
+      },
     ],
   },
 };
