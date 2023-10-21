@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import { ProjectMedia } from "@/models/Project";
-import { stopVideos } from "@/utils/stopVideos";
+import { stopVideos } from "@/utils/videos";
 import { MediaCarousel } from "./MediaCarousel";
 
 export default function DesktopCarousel({

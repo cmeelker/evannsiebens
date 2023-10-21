@@ -1,11 +1,11 @@
 "use client";
 
-import { ContentfulImage } from "@/models/Image";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import MediaCount from "./MediaCount";
 import DesktopCarousel from "./carousel/DesktopCarousel";
 import { ProjectMedia } from "@/models/Project";
+import { stopVideos } from "@/utils/videos";
 
 export default function MediaList({ media }: { media: ProjectMedia }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
@@ -14,7 +14,7 @@ export default function MediaList({ media }: { media: ProjectMedia }) {
 
   return (
     <>
-      <ImageList
+      <ThumbnailList
         media={media}
         setShowCarousel={setShowCarousel}
         setSelectedImageIndex={setSelectedImageIndex}
@@ -34,7 +34,7 @@ export default function MediaList({ media }: { media: ProjectMedia }) {
   );
 }
 
-function ImageList({
+function ThumbnailList({
   media,
   setShowCarousel,
   setSelectedImageIndex,
@@ -45,29 +45,62 @@ function ImageList({
   setSelectedImageIndex: Dispatch<SetStateAction<number>>;
   setLastHoverIndex: Dispatch<SetStateAction<number>>;
 }) {
-  return media.images.map((image, index) => {
-    return (
-      <button
-        key={index}
-        className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
-        onClick={() => {
-          setShowCarousel(true);
-          setSelectedImageIndex(index);
-          setLastHoverIndex(index);
-        }}
-        onMouseEnter={() => {
-          setSelectedImageIndex(index);
-          setLastHoverIndex(index);
-        }}
-        onMouseLeave={() => setSelectedImageIndex(-1)}
-      >
-        <Image
-          className="object-cover"
-          src={image.url}
-          alt={image.alt || ""}
-          fill={true}
-        />
-      </button>
-    );
-  });
+  return (
+    <>
+      {media.images.map((image, index) => {
+        return (
+          <button
+            key={index}
+            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
+            onClick={() => {
+              setShowCarousel(true);
+              setSelectedImageIndex(index);
+              setLastHoverIndex(index);
+            }}
+            onMouseEnter={() => {
+              setSelectedImageIndex(index);
+              setLastHoverIndex(index);
+            }}
+            onMouseLeave={() => setSelectedImageIndex(-1)}
+          >
+            <Image
+              className="object-cover"
+              src={image.url}
+              alt={image.alt || ""}
+              fill={true}
+            />
+          </button>
+        );
+      })}
+      {media.videos.map((video, index) => {
+        return (
+          <button
+            key={index}
+            className={`w-full h-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[55rem] relative`}
+            onClick={() => {
+              setShowCarousel(true);
+              setSelectedImageIndex(index + media.images.length);
+              setLastHoverIndex(index + media.images.length);
+            }}
+            onMouseEnter={() => {
+              setSelectedImageIndex(index + media.images.length);
+              setLastHoverIndex(index + media.images.length);
+            }}
+            onMouseLeave={() => {
+              setSelectedImageIndex(-1);
+              stopVideos();
+            }}
+          >
+            <iframe
+              className="aspect-video"
+              src={`https://player.vimeo.com/video/${video.vimeoId}`}
+              width="100%"
+              height="100%"
+            ></iframe>
+          </button>
+        );
+      })}
+    </>
+  );
+  return;
 }

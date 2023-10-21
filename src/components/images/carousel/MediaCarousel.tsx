@@ -1,6 +1,6 @@
 "use client";
 import { ProjectMedia } from "@/models/Project";
-import { stopVideos } from "@/utils/stopVideos";
+import { stopVideos } from "@/utils/videos";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
