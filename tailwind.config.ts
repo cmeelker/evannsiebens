@@ -40,6 +40,9 @@ const config: Config = {
         black: "#000000",
         mirage: "#101820",
       },
+      screens: {
+        "hover-hover": { raw: "(hover: hover)" },
+      },
     },
   },
   plugins: [],

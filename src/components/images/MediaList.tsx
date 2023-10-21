@@ -51,7 +51,7 @@ function ThumbnailList({
         return (
           <button
             key={index}
-            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
+            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover-hover:hover:h-[31rem] hover-hover:hover:w-[51rem] relative`}
             onClick={() => {
               setShowCarousel(true);
               setSelectedImageIndex(index);
@@ -76,7 +76,7 @@ function ThumbnailList({
         return (
           <button
             key={index}
-            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover:h-[31rem] hover:w-[51rem] relative`}
+            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover-hover:hover:h-[31rem] hover-hover:hover:w-[51rem] relative`}
             onClick={() => {
               setShowCarousel(true);
               setSelectedImageIndex(index + media.images.length);
