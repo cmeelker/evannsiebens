@@ -3,6 +3,7 @@
 import { CVItem, CVPage, CVSection } from "@/models/CV";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useCollapse } from "react-collapsed";
+import Image from "next/image";
 
 type SectionState =
   | "initial"
@@ -76,7 +77,9 @@ function CVSection({
               : "opacity-0 w-0"
           } transition-all duration-300`}
         >
-          <div className="mr-2 pb-1">⇉</div>
+          <div className="mr-2 -mb-1">
+            <Image src="/icons/arrow.svg" height={42} width={42} alt="" />
+          </div>
         </div>
 
         <h1>
