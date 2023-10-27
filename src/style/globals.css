@@ -33,5 +33,5 @@ body {
 }
 
 .flex-gap-correction {
-  @apply -ml-[1px] pl-[1px] -mb-[1px] pb-[1px];
+  @apply -ml-[1px] pl-[1px] -mt-[1px] pt-[1px];
 }
