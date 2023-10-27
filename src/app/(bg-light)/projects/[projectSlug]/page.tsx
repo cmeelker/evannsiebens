@@ -2,6 +2,7 @@ import MobileCarousel from "@/components/images/carousel/MobileCarousel";
 import MediaList from "@/components/images/MediaList";
 import Richtext from "@/components/Richtext";
 import { getProject } from "@/services/projectService";
+import ScrollToTop from "@/utils/scrollToTop";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -30,6 +31,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <div className="relative">
+      <ScrollToTop />
       <div className="md:mr-8 md:w-[86%]">
         <div className="flex md:hidden">
           <MobileCarousel media={project.media} />

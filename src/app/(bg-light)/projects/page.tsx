@@ -1,6 +1,7 @@
 import { ListOrGridLink } from "@/components/nav/NavItems";
 import ProjectList from "@/components/projects/ProjectList";
 import { getProjects } from "@/services/projectService";
+import ScrollToTop from "@/utils/scrollToTop";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -14,6 +15,7 @@ export default async function Home() {
 
   return (
     <>
+      <ScrollToTop />
       <ProjectList projects={projects} />
       <ListOrGridLink />
     </>
