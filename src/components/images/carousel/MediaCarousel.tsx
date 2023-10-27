@@ -64,15 +64,12 @@ export function MediaCarousel({
           );
         })}
       </Slider>
-      <div className="flex justify-between -mt-2">
-        <div>
-          {/* {media.images[currentSlide].caption && (
-        <div className="text-nav w-fit">
-          {media.images[currentSlide].caption}
+      <div className="flex justify-between gap-2 -mt-1">
+        <div className="w-0 md:w-2/3 opacity-0 md:opacity-100">
+          <MediaCaption media={media} currentSlide={currentSlide} />
         </div>
-      )} */}
-        </div>
-        <div>
+
+        <div className="w-full md:w-1/3">
           {media.images.length > 1 && (
             <CarouselNavigation
               currentSlide={currentSlide}
@@ -86,6 +83,20 @@ export function MediaCarousel({
   );
 }
 
+function MediaCaption({
+  media,
+  currentSlide,
+}: {
+  media: ProjectMedia;
+  currentSlide: number;
+}) {
+  const captions = media.images
+    .flatMap((image) => image.caption)
+    .concat(media.videos.flatMap((video) => video.title));
+
+  return <div className="text-carousel-inline">{captions[currentSlide]}</div>;
+}
+
 function CarouselNavigation({
   currentSlide,
   total,
@@ -96,31 +107,34 @@ function CarouselNavigation({
   nextSlide: () => void;
 }) {
   return (
-    <div className="text-nav w-fit flex  ">
+    <div className="flex flex-wrap justify-end">
       {Array.from({ length: total }, (_, index) => (
         <div
           key={index}
           className={`${
             currentSlide === index ? "" : "text-mirage/50"
-          } transition-all duration-300 text-base md:text-lg`}
+          } transition-all duration-300 text-carousel-inline flex-gap-correction`}
         >
           {index + 1}
         </div>
       ))}
-      <button className="ml-2 lg:ml-6" onClick={() => nextSlide()}>
+      <button
+        className="bg-bright-gray min-h-[45.2px] md:min-h-[60px] flex-gap-correction"
+        onClick={() => nextSlide()}
+      >
         <Image
           src="/icons/arrow.svg"
           height={42}
           width={42}
           alt=""
-          className="hidden md:flex -mb-2"
+          className="hidden md:flex -mb-2 ml-3"
         />
         <Image
           src="/icons/arrow.svg"
           height={26}
           width={26}
           alt=""
-          className="md:hidden flex -mb-1"
+          className="md:hidden flex -mb-1 ml-2"
         />
       </button>
     </div>
