@@ -1,5 +1,3 @@
-// TO DO: Regular Font
-
 export const dynamic = "force-dynamic";
 
 export default async function Footer({

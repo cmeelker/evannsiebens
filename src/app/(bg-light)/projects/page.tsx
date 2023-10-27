@@ -1,3 +1,4 @@
+import { ListOrGridLink } from "@/components/nav/NavItems";
 import ProjectList from "@/components/projects/ProjectList";
 import { getProjects } from "@/services/projectService";
 import type { Metadata } from "next";
@@ -11,5 +12,10 @@ export const metadata: Metadata = {
 export default async function Home() {
   let projects = await getProjects();
 
-  return <ProjectList projects={projects} />;
+  return (
+    <>
+      <ProjectList projects={projects} />
+      <ListOrGridLink />
+    </>
+  );
 }

@@ -20,7 +20,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
   ];
 
   return (
-    <ul className="flex flex-col gap-10 md:gap-0 items-stretch mb-[22vh] md:mb-10">
+    <ul className="flex flex-col gap-10 md:gap-0 items-stretch mb-[10vh] md:mb-10">
       {projects.map((project: Project, index) => {
         const image = (
           <Link href={`/projects/${project.slug}`} className="w-full h-full">

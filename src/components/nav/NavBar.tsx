@@ -1,8 +1,10 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
+import { MenuItem } from "./NavItems";
 
 export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -51,9 +53,6 @@ export default function NavBar() {
           </div>
         </ProjectPageOnly>
       </div>
-      <ProjectPageOnly>
-        <ListOrGridLink />
-      </ProjectPageOnly>
     </div>
   );
 }
@@ -112,14 +111,6 @@ function MobileMenu({
   );
 }
 
-function MenuItem({ href, label }: { href: string; label: string }) {
-  return (
-    <div className="text-nav w-fit">
-      <Link href={href}>{label}</Link>
-    </div>
-  );
-}
-
 function ProjectPageOnly({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const onProjectPage = pathname === "/" || pathname === "/projects";
@@ -128,17 +119,4 @@ function ProjectPageOnly({ children }: { children: React.ReactNode }) {
     return <>{children}</>;
   }
   return <></>;
-}
-
-function ListOrGridLink() {
-  const pathname = usePathname();
-  const onGridView = pathname === "/";
-  const href = onGridView ? "/projects" : "/";
-  const label = onGridView ? "List" : "Grid";
-
-  return (
-    <div className="fixed bottom-0 left-0 md:hidden z-50 px-3">
-      <MenuItem href={href} label={label} />
-    </div>
-  );
 }

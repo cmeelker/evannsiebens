@@ -7,6 +7,8 @@ import { useState } from "react";
 import { ContentfulImage } from "@/models/Image";
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
+  const pr = projects.concat(projects).concat(projects);
+
   const [currentImage, setCurrentImage] = useState(projects[0].media.images[0]);
   const [showImage, setShowImage] = useState(false);
 
@@ -18,7 +20,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
   return (
     <div className="relative">
       <ul>
-        {projects.map((project: Project) => {
+        {pr.map((project: Project) => {
           return (
             <li key={project.id}>
               <Link
