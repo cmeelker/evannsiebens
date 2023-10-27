@@ -102,7 +102,7 @@ function CarouselNavigation({
           key={index}
           className={`${
             currentSlide === index ? "" : "text-mirage/50"
-          } transition-all duration-300`}
+          } transition-all duration-300 text-base md:text-lg`}
         >
           {index + 1}
         </div>
@@ -113,14 +113,14 @@ function CarouselNavigation({
           height={42}
           width={42}
           alt=""
-          className="hidden lg:flex -mb-2"
+          className="hidden md:flex -mb-2"
         />
         <Image
           src="/icons/arrow.svg"
           height={26}
           width={26}
           alt=""
-          className="lg:hidden flex -mb-1"
+          className="md:hidden flex -mb-1"
         />
       </button>
     </div>
