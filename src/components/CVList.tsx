@@ -16,7 +16,7 @@ export default function CVList({ cvPage }: { cvPage: CVPage }) {
   const [hoveredSection, sethoveredSection] = useState<number | null>(null);
 
   return (
-    <div className="flex justify-between flex-col lg:flex-row min-h-[75vh] lg:min-h-0">
+    <div className="flex justify-between flex-col lg:flex-row min-h-[75vh] md:min-h-[88vh] lg:min-h-0">
       <div className="md:w-[86%]">
         {cvPage.sections.map((section) => (
           <div

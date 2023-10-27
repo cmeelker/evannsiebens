@@ -7,7 +7,7 @@ export default async function Footer({
 }) {
   return (
     <footer
-      className={`text-regular text-xs sm:text-sm mt-10 pb-3 ${className}`}
+      className={`text-regular text-xs sm:text-sm mt-5 pb-3 ${className}`}
     >
       This website and its content is ©opyright of Evann Siebens, unless stated
       otherwise. All rights reserved.
