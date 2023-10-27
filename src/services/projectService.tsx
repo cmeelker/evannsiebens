@@ -5,7 +5,11 @@ export async function getProjects() {
   const client = contentfulClient();
 
   const res = await client
-    .getEntries({ content_type: "project", include: 10 })
+    .getEntries({
+      content_type: "project",
+      order: ["-fields.year"],
+      include: 10,
+    })
     .then((response) => response.items);
 
   const projects: Project[] = res.map((project: any) => mapProject(project));
