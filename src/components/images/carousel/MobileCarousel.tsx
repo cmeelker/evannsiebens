@@ -9,7 +9,7 @@ export default function MobileCarousel({ media }: { media: ProjectMedia }) {
   const carouselHeight = "h-[calc(0.5625*100vw)]";
 
   return (
-    <div className="w-screen mb-16 mt-2 -ml-3">
+    <div className="w-[calc(100vw-17px)] mb-16 mt-2 -ml-3">
       <MediaCarousel media={media} height={carouselHeight} />
     </div>
   );

@@ -107,13 +107,20 @@ function CarouselNavigation({
           {index + 1}
         </div>
       ))}
-      <button className="ml-6" onClick={() => nextSlide()}>
+      <button className="ml-2 lg:ml-6" onClick={() => nextSlide()}>
         <Image
           src="/icons/arrow.svg"
           height={42}
           width={42}
           alt=""
-          className="-mb-2"
+          className="hidden lg:flex -mb-2"
+        />
+        <Image
+          src="/icons/arrow.svg"
+          height={26}
+          width={26}
+          alt=""
+          className="lg:hidden flex -mb-1"
         />
       </button>
     </div>
