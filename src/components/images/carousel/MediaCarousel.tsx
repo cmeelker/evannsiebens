@@ -56,6 +56,7 @@ export function MediaCarousel({
           return (
             <div key={index}>
               <iframe
+                loading="lazy"
                 className={height}
                 src={`https://player.vimeo.com/video/${video.vimeoId}`}
                 width="100%"
@@ -65,7 +66,7 @@ export function MediaCarousel({
         })}
       </Slider>
       <div className="flex justify-between gap-2 -mt-1">
-        <div className="w-0 md:w-2/3 opacity-0 md:opacity-100">
+        <div className="w-0 md:w-2/3 hidden md:block">
           <MediaCaption media={media} currentSlide={currentSlide} />
         </div>
 
