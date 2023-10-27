@@ -10,7 +10,7 @@ export function ListOrGridLink() {
   const label = onGridView ? "List" : "Grid";
 
   return (
-    <div className="sticky bottom-0 left-0 -ml-3 md:hidden z-50 px-3 mt-4">
+    <div className="sticky bottom-0 left-0 -ml-3 md:hidden z-50 px-3 mt-4 ">
       <MenuItem href={href} label={label} />
     </div>
   );
