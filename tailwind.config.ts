@@ -18,6 +18,13 @@ const config: Config = {
           letterSpacing: "[-0.06rem]",
         },
       ],
+      md: [
+        "2.825rem",
+        {
+          lineHeight: "2.825rem",
+          letterSpacing: "[-0.06rem]",
+        },
+      ],
       sm: [
         "1.5rem",
         {
@@ -42,6 +49,7 @@ const config: Config = {
       },
       screens: {
         "hover-hover": { raw: "(hover: hover)" },
+        xs: "400px",
       },
     },
   },

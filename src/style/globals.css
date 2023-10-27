@@ -21,7 +21,7 @@ body {
 }
 
 .text-nav {
-  @apply bg-bright-gray pt-3 pr-1;
+  @apply bg-bright-gray pt-3 pr-1 text-md xs:text-lg;
 }
 
 .text-body {
