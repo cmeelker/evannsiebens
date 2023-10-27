@@ -41,8 +41,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <Richtext document={project.description} />
       </div>
-      <ul className="w-[12%] hidden md:flex flex-col items-end absolute top-0 right-0 ">
-        <MediaList media={project.media} />
+      <ul className="w-[12%] hidden md:flex flex-col items-end absolute top-0 right-0 h-full">
+        <div className="sticky top-0 w-full flex flex-col items-end">
+          <MediaList media={project.media} />
+        </div>
       </ul>
     </div>
   );
