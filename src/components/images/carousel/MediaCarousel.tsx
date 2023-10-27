@@ -108,7 +108,13 @@ function CarouselNavigation({
         </div>
       ))}
       <button className="ml-6" onClick={() => nextSlide()}>
-        ⇉
+        <Image
+          src="/icons/arrow.svg"
+          height={42}
+          width={42}
+          alt=""
+          className="-mb-2"
+        />
       </button>
     </div>
   );

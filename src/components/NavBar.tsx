@@ -2,8 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
-
-// TO DO: In CMS ?
+import Image from "next/image";
 
 export default function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -69,9 +68,13 @@ function DesktopMenu({
   return (
     <ul className={`bg-bright-gray ${className}`}>
       {menuListItems[0]}
-      <div className="text-nav">⇉</div>
+      <div className="flex flex-col justify-end mx-1">
+        <Image src="/icons/arrow.svg" height={42} width={42} alt="" />
+      </div>
       {menuListItems[1]}
-      <div className="text-nav">⇉</div>
+      <div className="flex flex-col justify-end mx-1">
+        <Image src="/icons/arrow.svg" height={42} width={42} alt="" />
+      </div>
       {menuListItems[2]}
     </ul>
   );
@@ -95,13 +98,16 @@ function MobileMenu({
           {menuListItems}
         </ul>
       </div>
-      <div
-        className="text-nav h-fit hover:cursor-pointer w-16 text-center"
+      <button
         onClick={() => setShowMenu(!showMenu)}
+        className="flex flex-col justify-end h-14 p-1 bg-bright-gray"
       >
-        {/* TO DO: ICONS */}
-        {showMenu ? <div>/-</div> : <div>=</div>}
-      </div>
+        {showMenu ? (
+          <Image src="/icons/menu-open.svg" height={26} width={42} alt="" />
+        ) : (
+          <Image src="/icons/menu-closed.svg" height={26} width={42} alt="" />
+        )}
+      </button>
     </div>
   );
 }
