@@ -12,6 +12,10 @@ export default function MediaList({ media }: { media: ProjectMedia }) {
   const [showCarousel, setShowCarousel] = useState(false);
   const [lastHoverIndex, setLastHoverIndex] = useState(0);
 
+  if (media.images === undefined && media.videos === undefined) {
+    return <></>;
+  }
+
   return (
     <>
       <ThumbnailList
