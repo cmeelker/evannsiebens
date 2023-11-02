@@ -71,7 +71,7 @@ export function MediaCarousel({
         </div>
 
         <div className="w-full md:w-1/3">
-          {media.images.length > 1 && (
+          {media.images.length + media.videos.length > 0 && (
             <CarouselNavigation
               currentSlide={currentSlide}
               nextSlide={nextSlide}
