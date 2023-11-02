@@ -7,10 +7,12 @@ import { useState } from "react";
 import { ContentfulImage } from "@/models/Image";
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
-  const [currentImage, setCurrentImage] = useState(projects[0].media.images[0]);
+  const [currentImage, setCurrentImage] = useState(
+    projects[0].media.images ? projects[0].media.images[0] : null
+  );
   const [showImage, setShowImage] = useState(false);
 
-  function onMouseEnter(image: ContentfulImage) {
+  function onMouseEnter(image: ContentfulImage | null) {
     setCurrentImage(image);
     setShowImage(true);
   }
@@ -24,7 +26,11 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               <Link
                 className="hover:opacity-70"
                 href={`/projects/${project.slug}`}
-                onMouseOver={() => onMouseEnter(project.media.images[0])}
+                onMouseOver={() =>
+                  onMouseEnter(
+                    project.media.images ? project.media.images[0] : null
+                  )
+                }
                 onMouseLeave={() => setShowImage(false)}
               >
                 {project.title}, {project.year}
@@ -43,7 +49,7 @@ function HoverImage({
   image,
 }: {
   showImage: boolean;
-  image: ContentfulImage;
+  image: ContentfulImage | null;
 }) {
   const opacityClass = showImage ? "opacity-100" : "opacity-0";
 
@@ -52,12 +58,14 @@ function HoverImage({
       <div
         className={`sticky top-0 w-full h-[25rem] xl:h-[30rem] lg:block hidden transition-all duration-300 delay-100 ${opacityClass}`}
       >
-        <Image
-          className="object-cover"
-          src={image.url}
-          alt={image.alt || ""}
-          fill={true}
-        />
+        {image && (
+          <Image
+            className="object-cover"
+            src={image.url}
+            alt={image.alt || ""}
+            fill={true}
+          />
+        )}
       </div>
     </div>
   );
