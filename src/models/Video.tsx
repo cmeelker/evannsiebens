@@ -8,8 +8,8 @@ export interface ContentfulVideo {
 export function mapVideo(video: any): ContentfulVideo {
   return {
     id: video.sys.id,
-    url: `https:${video.fields.file.url}`,
-    alt: video.fields.title,
-    caption: video.fields.title,
+    url: `https:${video.fields?.file.url}`,
+    alt: video.fields?.title,
+    caption: video.fields?.title,
   };
 }

@@ -27,8 +27,8 @@ export function mapProject(project: any): Project {
     description: project.fields.description,
     media: {
       gridVideo: mapVideo(project.fields.gif),
-      images: project.fields.images.map((image: any) => mapImage(image)),
-      videos: project.fields.video.map((video: any) => mapVimeo(video)),
+      images: project.fields.images?.map((image: any) => mapImage(image)),
+      videos: project.fields.video?.map((video: any) => mapVimeo(video)),
     },
   };
 }
