@@ -26,7 +26,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
           <Link href={`/projects/${project.slug}`} className="w-full h-full">
             <GridVideoPlayer
               video={project.media.gridVideo}
-              preload={index < 5}
+              preload={index < 10}
             />
           </Link>
         );
