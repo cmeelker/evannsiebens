@@ -33,7 +33,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <>
       <div className="pointer-events-none fixed top-0 max-w-[140rem] w-full left-1/2 -translate-x-1/2 justify-start hidden md:flex z-50">
-        <MenuItem href="/" label="Back" className="pointer-events-auto" />
+        <MenuItem
+          href="/projects"
+          label="Back"
+          className="pointer-events-auto"
+        />
       </div>
       <div className="relative min-h-[75vh]">
         <ScrollToTop />
@@ -55,7 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </ul>
       </div>
-      <StickyBottomButton href="/" label="Back" />
+      <StickyBottomButton href="/projects" label="Back" />
     </>
   );
 }
