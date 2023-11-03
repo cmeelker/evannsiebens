@@ -5,14 +5,14 @@ const config: Config = {
   theme: {
     fontSize: {
       base: [
-        "1.875rem",
+        "1.875rem", // 30 px
         {
           lineHeight: "1.875rem",
           letterSpacing: "[-0.06rem]",
         },
       ],
       lg: [
-        "3.125rem",
+        "3.125rem", // 50px
         {
           lineHeight: "3.125rem",
           letterSpacing: "[-0.06rem]",

@@ -45,7 +45,12 @@ export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
       onMouseLeave={() => !isTouchDevice && Pause()}
       className="h-full w-full"
     >
-      <video ref={videoRef} loop muted className="h-full w-full object-cover">
+      <video
+        ref={videoRef}
+        loop
+        muted
+        className="h-full w-full object-cover"
+      >
         <source src={video.url} type="video/mp4" title={video.caption} />
       </video>
     </div>
