@@ -13,7 +13,7 @@ export default async function BioPage() {
   const bioPage = await getBioPage();
 
   return (
-    <div className="md:w-[86%]">
+    <div>
       <Richtext document={bioPage.description} />
     </div>
   );
