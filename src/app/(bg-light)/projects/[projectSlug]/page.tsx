@@ -33,7 +33,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <div className="relative">
       <ScrollToTop />
       <div className="md:mr-8 md:w-[86%]">
-        <div className="flex md:hidden">
+        <div className="flex md:hidden mb-[110px]">
           <MobileCarousel media={project.media} />
         </div>
 
