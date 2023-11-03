@@ -8,6 +8,7 @@ export interface Project {
   slug: string;
   title: string;
   year: string;
+  mediaType: string;
   description: Document;
   media: ProjectMedia;
 }
@@ -23,6 +24,7 @@ export function mapProject(project: any): Project {
     id: project.sys.id,
     slug: project.fields.slug,
     title: project.fields.title,
+    mediaType: project.fields.mediaType,
     year: project.fields.year,
     description: project.fields.description,
     media: {

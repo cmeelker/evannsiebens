@@ -37,9 +37,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <MobileCarousel media={project.media} />
         </div>
 
-        <h1 className="mb-12">
+        <h1>
           {project.title}, {project.year}
         </h1>
+        <h2 className="mb-12">{project.mediaType}</h2>
 
         <Richtext document={project.description} />
       </div>
