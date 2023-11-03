@@ -1,14 +1,12 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-export function ListOrGridLink() {
-  const pathname = usePathname();
-  const onGridView = pathname === "/";
-  const href = onGridView ? "/projects" : "/";
-  const label = onGridView ? "List" : "Grid";
-
+export function StickyBottomButton({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}) {
   return (
     <div className="sticky bottom-0 left-0 -ml-3 md:hidden z-50 px-3 mt-4 ">
       <MenuItem href={href} label={label} />
@@ -16,9 +14,17 @@ export function ListOrGridLink() {
   );
 }
 
-export function MenuItem({ href, label }: { href: string; label: string }) {
+export function MenuItem({
+  href,
+  label,
+  className,
+}: {
+  href: string;
+  label: string;
+  className?: string;
+}) {
   return (
-    <div className="text-nav w-fit">
+    <div className={`text-nav w-fit ${className}`}>
       <Link href={href}>{label}</Link>
     </div>
   );

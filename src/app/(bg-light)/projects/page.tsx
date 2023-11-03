@@ -1,4 +1,4 @@
-import { ListOrGridLink } from "@/components/nav/NavItems";
+import { StickyBottomButton } from "@/components/nav/NavItems";
 import ProjectList from "@/components/projects/ProjectList";
 import { getProjects } from "@/services/projectService";
 import ScrollToTop from "@/utils/scrollToTop";
@@ -17,7 +17,7 @@ export default async function Home() {
     <>
       <ScrollToTop />
       <ProjectList projects={projects} />
-      <ListOrGridLink />
+      <StickyBottomButton href="/" label="Grid" />
     </>
   );
 }
