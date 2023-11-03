@@ -1,9 +1,6 @@
-import MobileCarousel from "@/components/images/carousel/MobileCarousel";
-import MediaList from "@/components/images/MediaList";
-import { MenuItem, StickyBottomButton } from "@/components/nav/NavItems";
-import Richtext from "@/components/Richtext";
+import { MenuItem } from "@/components/nav/NavItems";
+import ProjectDetails from "@/components/projects/ProjectDetails";
 import { getProject } from "@/services/projectService";
-import ScrollToTop from "@/utils/scrollToTop";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -39,27 +36,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           className="pointer-events-auto"
         />
       </div>
-      <div className="relative min-h-[75vh]">
-        <ScrollToTop />
-        <div className="md:mr-8 md:w-[86%]">
-          <div className="flex md:hidden mb-[110px]">
-            <MobileCarousel media={project.media} />
-          </div>
-
-          <h1>
-            {project.title}, {project.year}
-          </h1>
-          <h2 className="mb-12">{project.mediaType}</h2>
-
-          <Richtext document={project.description} />
-        </div>
-        <ul className="w-[12%] -mt-[180px] hidden md:flex flex-col items-end absolute top-0 right-0 h-full">
-          <div className="sticky top-0 w-full flex flex-col items-end z-50">
-            <MediaList media={project.media} />
-          </div>
-        </ul>
-      </div>
-      <StickyBottomButton href="/projects" label="Back" />
+      <ProjectDetails project={project} />
     </>
   );
 }
