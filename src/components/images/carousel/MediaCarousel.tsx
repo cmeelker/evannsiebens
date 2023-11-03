@@ -70,7 +70,7 @@ export function MediaCarousel({
           <MediaCaption media={media} currentSlide={currentSlide} />
         </div>
 
-        <div className="w-full md:w-1/3">
+        <div className="w-full md:w-1/3 pt-3 md:pt-0">
           {media.images.length + media.videos.length > 0 && (
             <CarouselNavigation
               currentSlide={currentSlide}
@@ -128,14 +128,7 @@ function CarouselNavigation({
           height={42}
           width={42}
           alt=""
-          className="hidden md:flex -mb-2 ml-3"
-        />
-        <Image
-          src="/icons/arrow.svg"
-          height={26}
-          width={26}
-          alt=""
-          className="md:hidden flex -mb-1 ml-2"
+          className="flex -mb-2 ml-3 mr-5 md:mr-0"
         />
       </button>
     </div>
