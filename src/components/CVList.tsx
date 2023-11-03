@@ -1,6 +1,6 @@
 "use client";
 
-import { CVItem, CVPage, CVSection } from "@/models/CV";
+import { CVItem, CVPage, CVSection, PDF } from "@/models/CV";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useCollapse } from "react-collapsed";
 import Image from "next/image";
@@ -17,38 +17,52 @@ export default function CVList({ cvPage }: { cvPage: CVPage }) {
   const [hoveredSection, sethoveredSection] = useState<number | null>(null);
 
   return (
-    <div className="flex justify-between flex-col lg:flex-row min-h-[75vh] md:min-h-[88vh] lg:min-h-0">
-      <div className="md:w-[86%]">
-        {cvPage.sections.map((section) => (
-          <div
-            key={section.id}
-            onMouseEnter={() => sethoveredSection(section.id)}
-            onMouseLeave={() => sethoveredSection(null)}
-            className="w-fit"
-          >
-            <CVSection
-              key={section.id}
-              section={section}
-              expandedSection={expandedSection}
-              setExpandedSection={setExpandedSection}
-              sectionState={getSectionState(
-                section.id,
-                expandedSection,
-                hoveredSection
-              )}
-            />
-          </div>
-        ))}
+    <>
+      <div className="pointer-events-none fixed top-0 max-w-[140rem] w-full left-1/2 -translate-x-1/2 justify-end hidden md:flex z-50">
+        <PDFLink pdf={cvPage.pdf} />
       </div>
-      <a
-        download={`${cvPage.pdf.name}.pdf`}
-        href={cvPage.pdf.url}
-        className="text-nav text-lg lg:-mt-2 mt-4 hover:text-mirage/50 lg:relative sticky bottom-0"
-        target="_blank"
-      >
-        PDF
-      </a>
-    </div>
+      <div className="flex justify-between flex-col lg:flex-row min-h-[75vh] md:min-h-[88vh] lg:min-h-0">
+        <div className="md:w-[86%]">
+          {cvPage.sections.map((section) => (
+            <div
+              key={section.id}
+              onMouseEnter={() => sethoveredSection(section.id)}
+              onMouseLeave={() => sethoveredSection(null)}
+              className="w-fit"
+            >
+              <CVSection
+                key={section.id}
+                section={section}
+                expandedSection={expandedSection}
+                setExpandedSection={setExpandedSection}
+                sectionState={getSectionState(
+                  section.id,
+                  expandedSection,
+                  hoveredSection
+                )}
+              />
+            </div>
+          ))}
+        </div>
+        <PDFLink
+          pdf={cvPage.pdf}
+          className="text-nav text-lg md:hidden md:-mt-2 mt-4  md:relative sticky bottom-0 w-fit"
+        />
+      </div>
+    </>
+  );
+}
+
+function PDFLink({ pdf, className }: { pdf: PDF; className?: string }) {
+  return (
+    <a
+      download={`${pdf.name}.pdf`}
+      href={pdf.url}
+      className={`${className} text-nav pointer-events-auto`}
+      target="_blank"
+    >
+      PDF
+    </a>
   );
 }
 
