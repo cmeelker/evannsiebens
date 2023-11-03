@@ -6,6 +6,12 @@ export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
+  const [allowVideo, setAllowVideo] = useState(false);
+
+  useEffect(() => {
+    setAllowVideo(true);
+  }, []);
+
   const { ref, inView } = useInView({
     rootMargin: "-50% 0px -50% 0px",
   });
@@ -45,15 +51,17 @@ export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
       onMouseLeave={() => !isTouchDevice && Pause()}
       className="h-full w-full"
     >
-      <video
-        ref={videoRef}
-        loop
-        muted
-        preload="auto"
-        className="h-full w-full object-cover"
-      >
-        <source src={video.url} type="video/mp4" title={video.caption} />
-      </video>
+      {allowVideo && (
+        <video
+          ref={videoRef}
+          loop
+          muted
+          preload="auto"
+          className="h-full w-full object-cover"
+        >
+          <source src={video.url} type="video/mp4" title={video.caption} />
+        </video>
+      )}
     </div>
   );
 }
