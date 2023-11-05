@@ -28,13 +28,29 @@ export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
 
   function Play() {
     if (videoRef.current) {
-      videoRef.current.play();
+      var isPlaying =
+        videoRef.current.currentTime > 0 &&
+        !videoRef.current.paused &&
+        !videoRef.current.ended &&
+        videoRef.current.readyState > videoRef.current.HAVE_CURRENT_DATA;
+
+      if (!isPlaying) {
+        videoRef.current.play();
+      }
     }
   }
 
   function Pause() {
     if (videoRef.current) {
-      videoRef.current.pause();
+      var isPlaying =
+        videoRef.current.currentTime > 0 &&
+        !videoRef.current.paused &&
+        !videoRef.current.ended &&
+        videoRef.current.readyState > videoRef.current.HAVE_CURRENT_DATA;
+
+      if (isPlaying) {
+        videoRef.current.pause();
+      }
     }
   }
 
@@ -45,13 +61,7 @@ export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
       onMouseLeave={() => !isTouchDevice && Pause()}
       className="h-full w-full"
     >
-      <video
-        ref={videoRef}
-        loop
-        muted
-        preload="auto"
-        className="h-full w-full object-cover"
-      >
+      <video ref={videoRef} loop muted className="h-full w-full object-cover">
         <source src={video.url} type="video/mp4" title={video.caption} />
       </video>
     </div>
