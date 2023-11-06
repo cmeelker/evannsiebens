@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "https://videos.ctfassets.net/0opxhh4wnmx1/(.*\\.mp4)",
+      "headers": [
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        }
+      ]
+    }
+  ]
+}
