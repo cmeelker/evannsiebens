@@ -7,16 +7,16 @@ import GridVideoPlayer from "../videos/GridVideoPlayer";
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
   const rowStyles = [
-    "w-[56%] h-[33rem] -mb-12",
-    "w-[44%] h-[24rem] self-end mb-4",
-    "w-[56%] h-[37rem] self-center mb-5",
-    "w-[40%] h-[24rem] ml-[3%] -mb-28",
-    "w-[40%] h-[24rem] self-end mr-[16%] mb-11",
-    "w-[56%] h-[33rem] self-end mb-[17rem]",
-    "w-[83%] h-[49rem] ml-[3%] mb-[3.5rem]",
-    "w-[40%] h-[23rem] self-end -mb-[1.7rem]",
-    "w-[56%] h-[32rem] ml-[11%] mb-[3.8%]",
-    "w-[40%] h-[24rem] self-end mr-[16%] mb-16",
+    "w-[56%] h-[33rem] ml-[3%] -mb-12",
+    "w-[48%] h-[24rem] self-end -mb-[1.9rem]",
+    "w-[56%] h-[37rem] self-center -mb-[2.5rem] z-20",
+    "w-[40%] h-[24rem] ml-[3%]  -mb-[4rem]",
+    "w-[40%] h-[24rem] self-end mr-[16%] -mb-[1.9rem] z-20",
+    "w-[56%] h-[33rem] self-end -mb-[1.9rem]",
+    "w-[83%] h-[49rem] ml-[3%] -mb-[1.9rem]",
+    "w-[40%] h-[23rem] self-end -mb-[1.9rem]",
+    "w-[56%] h-[32rem] ml-[11%] -mb-[1.9rem] z-30",
+    "w-[40%] h-[24rem] self-end mr-[16%] -mb-[4rem] z-20",
   ];
 
   return (
