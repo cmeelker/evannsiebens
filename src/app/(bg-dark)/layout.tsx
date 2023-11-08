@@ -5,9 +5,5 @@ export default function DarkLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <Layout className="bg-black" footerClassName="hidden">
-      {children}
-    </Layout>
-  );
+  return <Layout className="bg-black">{children}</Layout>;
 }
