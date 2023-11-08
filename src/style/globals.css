@@ -16,7 +16,7 @@
 }
 
 body {
-  @apply font-bold text-mirage text-lg;
+  @apply font-bold text-mirage text-lg break-words;
   font-family: "Arial Grotesk", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
