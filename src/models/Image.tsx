@@ -8,8 +8,8 @@ export interface ContentfulImage {
 export function mapImage(image: any): ContentfulImage {
   return {
     id: image.sys.id,
-    url: `https:${image.fields.file.url}`,
-    alt: image.fields.title,
-    caption: image.fields.title,
+    url: `https:${image.fields?.file.url}`,
+    alt: image.fields?.title,
+    caption: image.fields?.title,
   };
 }

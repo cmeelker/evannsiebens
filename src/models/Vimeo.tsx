@@ -6,10 +6,10 @@ export interface ContentfulVimeo {
 }
 
 export function mapVimeo(vimeo: any): ContentfulVimeo {
-  const id = vimeo.fields.url.split("/").pop();
+  const id = vimeo.fields?.url.split("/").pop();
   return {
     id: vimeo.sys.id,
-    title: vimeo.fields.title,
+    title: vimeo.fields?.title,
     vimeoId: id,
     thumbnailUrl: `https://vumbnail.com/${id}.jpg`,
   };
