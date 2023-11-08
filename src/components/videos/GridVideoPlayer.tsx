@@ -2,7 +2,13 @@ import { ContentfulVideo } from "@/models/Video";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
+export function GridVideoPlayer({
+  video,
+  posterUrl,
+}: {
+  video: ContentfulVideo;
+  posterUrl: string;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -67,6 +73,7 @@ export function GridVideoPlayer({ video }: { video: ContentfulVideo }) {
         muted
         playsInline
         className="h-full w-full object-cover"
+        poster={posterUrl}
       >
         <source src={video.url} type="video/mp4" title={video.caption} />
       </video>

@@ -24,7 +24,12 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
       {projects.map((project: Project, index) => {
         const image = (
           <Link href={`/projects/${project.slug}`} className="w-full h-full">
-            <GridVideoPlayer video={project.media.gridVideo} />
+            <GridVideoPlayer
+              video={project.media.gridVideo}
+              posterUrl={
+                project.media?.images ? project.media.images[0].url : ""
+              }
+            />
           </Link>
         );
 
