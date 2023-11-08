@@ -95,12 +95,17 @@ function ThumbnailList({
               stopVideos();
             }}
           >
-            <Image
-              className="object-cover "
-              src={video.thumbnailUrl}
-              alt={video.title}
-              fill={true}
-            />
+            <div className="relative w-full h-full flex justify-center items-center">
+              <div className="h-[60%] w-1/2 absolute z-10">
+                <Image src="/icons/play.svg" fill={true} alt="" />
+              </div>
+              <Image
+                className="object-cover"
+                src={video.thumbnailUrl}
+                alt={video.title}
+                fill={true}
+              />
+            </div>
           </button>
         );
       })}

@@ -56,7 +56,7 @@ export default function DesktopCarousel({
     : "opacity-0 pointer-events-none";
 
   return (
-    <div className={`${opacityClass} transition-all duration-500`}>
+    <div className={`${opacityClass} transition-all duration-500 z-50`}>
       <div className="w-screen h-screen bg-mirage/50 fixed top-0 left-0">
         <div
           ref={carouselRef}
