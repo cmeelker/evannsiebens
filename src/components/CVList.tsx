@@ -21,7 +21,7 @@ export default function CVList({ cvPage }: { cvPage: CVPage }) {
       <div className="pointer-events-none fixed top-0 max-w-[140rem] w-full left-1/2 -translate-x-1/2 justify-end hidden md:flex z-50">
         <PDFLink pdf={cvPage.pdf} />
       </div>
-      <div className="flex justify-between flex-col lg:flex-row min-h-[85vh] lg:min-h-0">
+      <div className="flex justify-between flex-col lg:flex-row">
         <div className="md:w-[86%]">
           {cvPage.sections.map((section) => (
             <div
@@ -111,7 +111,7 @@ function CVSection({
       </div>
 
       <div {...getCollapseProps()}>
-        <CVItems items={section.items} />
+        {section.items && <CVItems items={section.items} />}
       </div>
     </div>
   );

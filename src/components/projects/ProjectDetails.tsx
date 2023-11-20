@@ -13,7 +13,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
 
   return (
     <>
-      <div className="relative min-h-[75vh]">
+      <div className="relative">
         <ScrollToTop />
         <div className="md:mr-8 md:w-[86%]">
           <div className="flex md:hidden mb-[110px]">

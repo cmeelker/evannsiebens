@@ -33,7 +33,7 @@ export function mapCVSection(section: any, id: number): CVSection {
   return {
     id: section.sys.id,
     title: section.fields.title,
-    items: section.fields.items.map(mapCVItem),
+    items: section.fields.items?.map(mapCVItem),
   };
 }
 
