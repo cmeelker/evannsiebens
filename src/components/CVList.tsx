@@ -98,6 +98,7 @@ function CVSection({
 
         <h1>
           <button
+            className="text-left"
             {...getToggleProps()}
             onClick={() =>
               setExpandedSection(
