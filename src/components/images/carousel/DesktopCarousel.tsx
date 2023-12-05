@@ -60,7 +60,7 @@ export default function DesktopCarousel({
       <div className="w-screen h-screen bg-mirage/50 fixed top-0 left-0">
         <div
           ref={carouselRef}
-          className={`w-[60vw] ${carouselHeight} bg-black fixed top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2`}
+          className={`w-[60vw] ${carouselHeight} bg-black fixed top-[50%] left-[50%] -translate-y-[60%] -translate-x-[50%]`}
         >
           <MediaCarousel
             initialIndex={initialIndex}
