@@ -68,7 +68,9 @@ function ThumbnailList({
             onMouseLeave={() => setSelectedImageIndex(-1)}
           >
             <Image
-              className="object-cover"
+              className={`${
+                image.isPortrait ? "object-contain" : "object-cover"
+              } object-right`}
               src={image.url}
               alt={image.alt || ""}
               fill={true}

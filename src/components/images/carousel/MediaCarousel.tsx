@@ -44,7 +44,7 @@ export function MediaCarousel({
           return (
             <div key={index} className={`w-full ${height} relative`}>
               <Image
-                className="object-cover"
+                className={image.isPortrait ? "object-contain" : "object-cover"}
                 src={image.url}
                 alt={image.alt || ""}
                 fill={true}
