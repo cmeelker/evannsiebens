@@ -1,3 +1,5 @@
+import { Document } from "@contentful/rich-text-types";
+
 export interface CVSection {
   id: number;
   title: string;
@@ -8,6 +10,7 @@ export interface CVItem {
   id: number;
   title: string;
   year: string;
+  links: Document;
 }
 
 export interface PDF {
@@ -26,6 +29,7 @@ export function mapCVItem(item: any): CVItem {
     id: item.sys.id,
     title: item.fields.title,
     year: item.fields.year,
+    links: item.fields.links,
   };
 }
 

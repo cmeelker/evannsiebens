@@ -4,6 +4,7 @@ import { CVItem, CVPage, CVSection, PDF } from "@/models/CV";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useCollapse } from "react-collapsed";
 import Image from "next/image";
+import Richtext from "@/components/Richtext";
 
 type SectionState =
   | "initial"
@@ -126,6 +127,7 @@ function CVItems({ items }: { items: CVItem[] }) {
           <div key={item.id}>
             <h2>{item.year}</h2>
             <div>{item.title}</div>
+            <Richtext document={item.links} />
           </div>
         );
       })}
