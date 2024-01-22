@@ -8,9 +8,8 @@ export interface CVSection {
 
 export interface CVItem {
   id: number;
-  title: string;
+  title: Document;
   year: string;
-  links: Document;
 }
 
 export interface PDF {
@@ -29,7 +28,6 @@ export function mapCVItem(item: any): CVItem {
     id: item.sys.id,
     title: item.fields.title,
     year: item.fields.year,
-    links: item.fields.links,
   };
 }
 

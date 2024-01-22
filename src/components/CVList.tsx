@@ -126,8 +126,7 @@ function CVItems({ items }: { items: CVItem[] }) {
         return (
           <div key={item.id}>
             <h2>{item.year}</h2>
-            <div>{item.title}</div>
-            <Richtext document={item.links} />
+            <Richtext document={item.title} />
           </div>
         );
       })}

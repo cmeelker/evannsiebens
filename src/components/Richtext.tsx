@@ -18,7 +18,12 @@ function openLinksInNewTabs(
   children: ReactNode
 ): JSX.Element {
   return (
-    <a target="_blank" rel="noopener noreferrer" href={node.data.uri}>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={node.data.uri}
+      className="underline"
+    >
       {children}
     </a>
   );
