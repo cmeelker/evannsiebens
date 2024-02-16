@@ -15,14 +15,16 @@ export default function ImageBar({ media }: { media: ProjectMedia }) {
   }, [windowWidth]);
 
   return (
-    <div className="flex items-start">
+    <div
+      className={`-mx-3 flex flex-nowrap overflow-x-auto overflow-y-hidden scrollbar-hide snap-x ${carouselHeightStyle}`}
+    >
       {media.images.map((image, index) => {
         const newWidth = (image.width / image.height) * carouselHeight;
         return (
           <div
             key={index}
             style={{ width: newWidth }}
-            className={`${carouselHeightStyle} relative bg-pink-400`}
+            className={"h-full relative flex-carousel snap-center"}
           >
             <Image
               className={"object-contain object-bottom"}
@@ -35,7 +37,10 @@ export default function ImageBar({ media }: { media: ProjectMedia }) {
       })}
       {media.videos.map((video, index) => {
         return (
-          <div key={index} className={`${carouselHeightStyle} w-[100vw]`}>
+          <div
+            key={index}
+            className={`${carouselHeightStyle} w-[100vw] flex-carousel`}
+          >
             <iframe
               loading="lazy"
               className={carouselHeightStyle}

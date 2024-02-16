@@ -10,8 +10,8 @@ export default function MobileCarousel({ media }: { media: ProjectMedia }) {
   }
 
   return (
-    <div className={`mb-16 -mt-[27px] -ml-3`}>
+    <>
       <ImageBar media={media} />
-    </div>
+    </>
   );
 }

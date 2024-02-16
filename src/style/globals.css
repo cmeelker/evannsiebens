@@ -42,3 +42,14 @@ body {
 .flex-gap-correction {
   @apply -ml-[3px] pl-[1px] -mt-[1px] pt-[1px];
 }
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
