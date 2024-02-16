@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import { ProjectMedia } from "@/models/Project";
 import { stopVideos } from "@/utils/videos";
-import { MediaCarousel } from "./MediaCarousel";
+import { SlickCarousel } from "./SlickCarousel";
 
 export default function DesktopCarousel({
   media,
@@ -62,7 +62,7 @@ export default function DesktopCarousel({
           ref={carouselRef}
           className={`w-[60vw] ${carouselHeight} fixed top-[50%] left-[50%] -translate-y-[60%] -translate-x-[50%]`}
         >
-          <MediaCarousel
+          <SlickCarousel
             initialIndex={initialIndex}
             media={media}
             height={carouselHeight}

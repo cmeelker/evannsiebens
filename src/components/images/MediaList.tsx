@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import MediaCount from "./MediaCount";
-import DesktopCarousel from "./carousel/DesktopCarousel";
+import DesktopCarousel from "./carousel/desktop/DesktopCarousel";
 import { ProjectMedia } from "@/models/Project";
 import { stopVideos } from "@/utils/videos";
 

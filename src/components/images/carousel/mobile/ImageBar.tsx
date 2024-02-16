@@ -1,9 +1,15 @@
 import { useWindowDimensions } from "@/hooks/useWindowDimensions";
-import { useState, useEffect } from "react";
+import { useState, useEffect, RefObject } from "react";
 import Image from "next/image";
 import { ProjectMedia } from "@/models/Project";
 
-export default function ImageBar({ media }: { media: ProjectMedia }) {
+export default function ImageBar({
+  media,
+  scrollRef,
+}: {
+  media: ProjectMedia;
+  scrollRef: RefObject<HTMLDivElement>;
+}) {
   const { width: windowWidth } = useWindowDimensions();
   const carouselHeightStyle = "h-[calc(0.5625*100vw)]";
 
@@ -16,12 +22,14 @@ export default function ImageBar({ media }: { media: ProjectMedia }) {
 
   return (
     <div
+      ref={scrollRef}
       className={`-mx-3 flex flex-nowrap overflow-x-auto overflow-y-hidden scrollbar-hide snap-x ${carouselHeightStyle}`}
     >
       {media.images.map((image, index) => {
         const newWidth = (image.width / image.height) * carouselHeight;
         return (
           <div
+            id={index.toString()}
             key={index}
             style={{ width: newWidth }}
             className={"h-full relative flex-carousel snap-center"}
@@ -38,6 +46,7 @@ export default function ImageBar({ media }: { media: ProjectMedia }) {
       {media.videos.map((video, index) => {
         return (
           <div
+            id={(media.images.length + index).toString()}
             key={index}
             className={`${carouselHeightStyle} w-[100vw] flex-carousel`}
           >
