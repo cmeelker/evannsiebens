@@ -7,6 +7,7 @@ import { Project } from "@/models/Project";
 import MediaList from "@/components/images/MediaList";
 import { StickyBottomButton } from "../nav/NavItems";
 import { useRouter } from "next/navigation";
+import CustomMobileCarousel from "../images/carousel/CustomMobileCarousel";
 
 export default function ProjectDetails({ project }: { project: Project }) {
   const router = useRouter();
@@ -16,6 +17,10 @@ export default function ProjectDetails({ project }: { project: Project }) {
       <div className="relative">
         <ScrollToTop />
         <div className="md:mr-8 md:w-[86%]">
+          <div className="flex md:hidden mb-[110px]">
+            <CustomMobileCarousel media={project.media} />
+          </div>
+
           <div className="flex md:hidden mb-[110px]">
             <MobileCarousel media={project.media} />
           </div>
