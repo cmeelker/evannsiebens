@@ -17,7 +17,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
       <div className="relative">
         <ScrollToTop />
         <div className="md:mr-8 md:w-[86%]">
-          <div className="flex md:hidden mb-[110px]">
+          <div className="flex flex-col md:hidden mb-[110px]">
             <CustomMobileCarousel media={project.media} />
           </div>
 
