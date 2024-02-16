@@ -1,12 +1,15 @@
 "use client";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import ScrollToTop from "@/utils/scrollToTop";
-import MobileCarousel from "../images/carousel/MobileCarousel";
+
 import Richtext from "../Richtext";
 import { Project } from "@/models/Project";
 import MediaList from "@/components/images/MediaList";
 import { StickyBottomButton } from "../nav/NavItems";
 import { useRouter } from "next/navigation";
+import MobileCarousel from "../images/carousel/mobile/MobileCarousel";
 
 export default function ProjectDetails({ project }: { project: Project }) {
   const router = useRouter();
@@ -16,7 +19,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
       <div className="relative">
         <ScrollToTop />
         <div className="md:mr-8 md:w-[86%]">
-          <div className="flex md:hidden mb-[110px]">
+          <div className="flex flex-col md:hidden mb-[110px]">
             <MobileCarousel media={project.media} />
           </div>
 

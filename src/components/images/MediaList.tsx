@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import MediaCount from "./MediaCount";
-import DesktopCarousel from "./carousel/DesktopCarousel";
+import DesktopCarousel from "./carousel/desktop/DesktopCarousel";
 import { ProjectMedia } from "@/models/Project";
 import { stopVideos } from "@/utils/videos";
 
@@ -55,7 +55,7 @@ function ThumbnailList({
         return (
           <button
             key={index}
-            className={`h-[6.4rem] w-full transition-all duration-300 delay-100 hover-hover:hover:h-[31rem] hover-hover:hover:w-[51rem] relative`}
+            className={`h-[3.9rem] lg:h-[4.4rem] xl:h-[6rem] w-full transition-all duration-300 delay-100 hover-hover:hover:h-[31rem] hover-hover:hover:w-[51rem] relative`}
             onClick={() => {
               setShowCarousel(true);
               setSelectedImageIndex(index);

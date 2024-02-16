@@ -51,6 +51,9 @@ const config: Config = {
         "hover-hover": { raw: "(hover: hover)" },
         xs: "400px",
       },
+      flex: {
+        carousel: "0 0 auto",
+      },
     },
   },
   plugins: [],
