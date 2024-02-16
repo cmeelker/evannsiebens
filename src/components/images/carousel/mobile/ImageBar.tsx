@@ -23,7 +23,7 @@ export default function ImageBar({
   return (
     <div
       ref={scrollRef}
-      className={`-mx-3 flex flex-nowrap overflow-x-auto overflow-y-hidden scrollbar-hide snap-x ${carouselHeightStyle}`}
+      className={`-mx-3 flex flex-nowrap overflow-y-hidden scrollbar-hide  ${carouselHeightStyle}`}
     >
       {media.images.map((image, index) => {
         const newWidth = (image.width / image.height) * carouselHeight;

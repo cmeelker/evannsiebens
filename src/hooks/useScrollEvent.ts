@@ -8,7 +8,7 @@ export function useScrollEffect(
     const scrollElement = scrollContainerRef.current;
 
     if (scrollElement) {
-      scrollElement.addEventListener("scroll", handleScroll);
+      scrollElement.addEventListener("scroll", handleScroll, { passive: true });
     }
 
     return () => {
