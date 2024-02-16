@@ -42,7 +42,7 @@ export function MediaCarousel({
       <Slider {...settings} ref={sliderRef}>
         {media.images.map((image, index) => {
           return (
-            <div key={index} className={`w-full ${height} relative`}>
+            <div key={index} className={`w-[100%] ${height} relative`}>
               <Image
                 className={image.isPortrait ? "object-contain" : "object-cover"}
                 src={image.url}
